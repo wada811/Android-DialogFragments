@@ -13,7 +13,7 @@ Various DialogFragments for Android.
 - StringPickerDialogFragment
 
 ## Sample
-Please try to move the [sample module](https://github.com/wada811/AndroidDialogFragments/tree/master/sample).
+Please try to move the [sample module](https://github.com/wada811/Android-DialogFragments/tree/master/sample).
 
 
 ## Usage
