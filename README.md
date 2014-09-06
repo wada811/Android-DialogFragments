@@ -1,4 +1,4 @@
-AndroidDialogFragments
+Android-DialogFragments
 ====
 
 Various DialogFragments for Android.
