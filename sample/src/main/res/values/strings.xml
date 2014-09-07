@@ -4,5 +4,19 @@
     <string name="app_name">Android-DialogFragments</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_progress_dialog_fragment_examples">ProgressDialogFragment examples</string>
+    <string name="title_activity_alert_dialog_fragment_examples">AlertDialogFragment examples</string>
+    <string name="title_activity_date_picker_dialog_fragment_examples">DatePickerDialogFragment examples</string>
+    <string name="title_activity_time_picker_dialog_fragment_examples">TimePickerDialogFragment examples</string>
+    <string name="title_activity_number_picker_dialog_fragment_examples">NumberPickerDialogFragment examples</string>
+    <string name="title_activity_string_picker_dialog_fragment_examples">StringPickerDialogFragment examples</string>
+
+    <!-- Dialog -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_no">NO</string>
+    <string name="dialog_title">Title</string>
+    <string name="dialog_message">Message</string>
 
 </resources>

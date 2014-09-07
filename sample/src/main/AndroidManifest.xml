@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="at.wada811.dialog" >
+    package="at.wada811.dialog.sample" >
 
     <application
         android:allowBackup="true"
@@ -8,13 +8,37 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="at.wada811.dialog.sample.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_alert_dialog_fragment_examples" >
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.ProgressDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_progress_dialog_fragment_examples" >
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.DatePickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_date_picker_dialog_fragment_examples" >
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.TimePickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_time_picker_dialog_fragment_examples" >
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.NumberPickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_number_picker_dialog_fragment_examples" >
+        </activity>
+        <activity
+            android:name="at.wada811.dialog.sample.StringPickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_string_picker_dialog_fragment_examples" >
         </activity>
     </application>
 

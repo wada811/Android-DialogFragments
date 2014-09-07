@@ -86,6 +86,10 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
     private static final String NEUTRAL_BUTTON = "neutralButton";
     private static final String NEGATIVE_BUTTON = "negativeButton";
 
+    private static final String POSITIVE_CLICK_LISTENER = "onClickPositive";
+    private static final String NEUTRAL_CLICK_LISTENER = "onClickNeutral";
+    private static final String NEGATIVE_CLICK_LISTENER = "onClickNegative";
+
     public static class Builder {
 
         private final Context context;
@@ -309,8 +313,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
          * displayed in the dialog as the content,
          * you will be notified of the selected item via the supplied listener.
          * 
-         * @param adapter The {@link DialogFragmentCallback#getListAdapter(DialogFragmentInterface)}
-         *        to
+         * @param povider The {@link DialogFragmentCallback#getAdapter(DialogFragmentInterface)} to
          *        supply the list of items
          * @return This Builder object to allow for chaining of calls to set methods
          */
@@ -396,6 +399,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         public Builder setPositiveButton(CharSequence text, DialogFragmentCallbackProvider provider){
             if(provider != null){
                 assertListenerBindable(provider);
+                args.putBoolean(POSITIVE_CLICK_LISTENER, true);
             }
             args.putCharSequence(POSITIVE_BUTTON, text);
             return this;
@@ -420,6 +424,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         public Builder setNeutralButton(CharSequence text, DialogFragmentCallbackProvider provider){
             if(provider != null){
                 assertListenerBindable(provider);
+                args.putBoolean(NEUTRAL_CLICK_LISTENER, true);
             }
             args.putCharSequence(NEUTRAL_BUTTON, text);
             return this;
@@ -444,6 +449,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         public Builder setNegativeButton(CharSequence text, DialogFragmentCallbackProvider provider){
             if(provider != null){
                 assertListenerBindable(provider);
+                args.putBoolean(NEGATIVE_CLICK_LISTENER, true);
             }
             args.putCharSequence(NEGATIVE_BUTTON, text);
             return this;
@@ -463,7 +469,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
          * Sets a listener to be invoked when the dialog is shown.
          * 
          * @param provider
-         * @param This Builder object to allow for chaining of calls to set methods
+         * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setOnShowListener(DialogFragmentCallbackProvider provider){
             assertListenerBindable(provider);
@@ -478,12 +484,11 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
          * Even in a cancelable dialog, the dialog may be dismissed for reasons other than being
          * canceled or one of the supplied choices being selected. If you are interested in
          * listening for all cases where the dialog is dismissed and not just when it is canceled,
-         * see {@link #setOnDismissListener(android.content.DialogInterface.OnDismissListener)
-         * setOnDismissListener}.
+         * see {@link #setOnDismissListener}.
          * </p>
          * 
          * @see #setCancelable(boolean)
-         * @see #setOnDismissListener(android.content.DialogInterface.OnDismissListener)
+         * @see #setOnDismissListener
          * 
          * @param provider
          * @return This Builder object to allow for chaining of calls to set methods
@@ -717,10 +722,13 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(positiveButtonText == null){
             return;
         }
+        final boolean useOnPositiveClickListener = args.getBoolean(POSITIVE_CLICK_LISTENER);
         builder.setPositiveButton(positiveButtonText, new OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which){
-                bindClickListener(which);
+                if(useOnPositiveClickListener){
+                    bindClickListener(which);
+                }
             }
         });
     }
@@ -731,10 +739,13 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(naturalButtonText == null){
             return;
         }
+        final boolean useOnNeutralClickListener = args.getBoolean(NEUTRAL_CLICK_LISTENER);
         builder.setNeutralButton(naturalButtonText, new OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which){
-                bindClickListener(which);
+                if(useOnNeutralClickListener){
+                    bindClickListener(which);
+                }
             }
         });
     }
@@ -745,10 +756,13 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(negativeButtonText == null){
             return;
         }
+        final boolean useOnNegativeClickListener = args.getBoolean(NEGATIVE_CLICK_LISTENER);
         builder.setNegativeButton(negativeButtonText, new OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which){
-                bindClickListener(which);
+                if(useOnNegativeClickListener){
+                    bindClickListener(which);
+                }
             }
         });
     }
