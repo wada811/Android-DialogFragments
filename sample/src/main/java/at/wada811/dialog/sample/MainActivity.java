@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
-import at.wada811.dialog.AlertDialogFragment;
 import at.wada811.dialog.DatePickerDialogFragment;
 import at.wada811.dialog.NumberPickerDialogFragment;
 import at.wada811.dialog.ProgressDialogFragment;
@@ -16,6 +15,7 @@ import at.wada811.dialog.StringPickerDialogFragment;
 import at.wada811.dialog.TimePickerDialogFragment;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesFragmentActivity;
+import at.wada811.dialog.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity;
 
 
 public class MainActivity extends ActionBarActivity{
@@ -28,20 +28,28 @@ public class MainActivity extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_main);
 
-        initExamples();
-        initListFragment();
+        if(savedInstanceState == null){
+            initExamples();
+            initListFragment();
+        }
     }
 
     private void initExamples(){
         items.add(
             new Examples(
-                "AlertDialogFragment in Activity",
+                getString(R.string.title_activity_dialog_fragment_callback_provider),
+                DialogFragmentCallbackProviderFragmentActivity.class
+            )
+        );
+        items.add(
+            new Examples(
+                getString(R.string.title_activity_alert_dialog_fragment_examples_in_activity),
                 AlertDialogFragmentExamplesActivity.class
             )
         );
         items.add(
             new Examples(
-                "AlertDialogFragment in Fragment",
+                getString(R.string.title_activity_alert_dialog_fragment_examples_in_fragment),
                 AlertDialogFragmentExamplesFragmentActivity.class
             )
         );

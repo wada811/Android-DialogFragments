@@ -12,10 +12,9 @@ public class AlertDialogFragmentExamplesFragmentActivity extends ActionBarActivi
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                .add(android.R.id.content, new AlertDialogFragmentExamplesFragment())
+                .replace(android.R.id.content, new AlertDialogFragmentExamplesFragment())
                 .commit();
         }
-
     }
 
 }

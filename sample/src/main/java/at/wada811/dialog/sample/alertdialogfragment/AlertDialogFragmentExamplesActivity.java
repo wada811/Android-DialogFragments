@@ -38,19 +38,22 @@ import at.wada811.dialog.sample.alertdialogfragment.examples.SingleChoiceAlertDi
 public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
     implements DialogFragmentCallbackProvider{
 
-    public static final ArrayList<Example> items = new ArrayList<Example>();
     final AlertDialogFragmentExamplesActivity self = this;
+    private ArrayList<Example> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_alert_dialog_fragment_examples);
 
-        initExample();
-        initListFragment();
+        if(savedInstanceState == null){
+            initExample();
+            initListFragment();
+        }
     }
 
     private void initExample(){
+        items = new ArrayList<Example>();
         items.add(new BasicAlertDialogExample(this));
         items.add(new EventAlertDialogExample(this));
         items.add(new ItemsAlertDialogExample(this));
@@ -75,8 +78,8 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
             )
         );
         getSupportFragmentManager().beginTransaction()
-                                   .add(android.R.id.content, listFragment)
-                                   .commit();
+            .replace(android.R.id.content, listFragment)
+            .commit();
     }
 
     @Override

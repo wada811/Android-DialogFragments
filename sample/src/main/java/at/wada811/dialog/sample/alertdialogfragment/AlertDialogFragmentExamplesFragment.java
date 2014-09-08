@@ -38,17 +38,17 @@ import at.wada811.dialog.sample.alertdialogfragment.examples.SingleChoiceAlertDi
 public class AlertDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 
-    public static final ArrayList<Example> items = new ArrayList<Example>();
+    private ArrayList<Example> items;
 
     @Override
-    public void onAttach(Activity activity){
-        super.onAttach(activity);
-
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
         initExample();
         initListFragment();
     }
 
     private void initExample(){
+        items = new ArrayList<Example>();
         items.add(new BasicAlertDialogExample(getActivity()));
         items.add(new EventAlertDialogExample(getActivity()));
         items.add(new ItemsAlertDialogExample(getActivity()));
