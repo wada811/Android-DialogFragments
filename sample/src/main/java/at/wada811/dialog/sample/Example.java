@@ -1,5 +1,6 @@
 package at.wada811.dialog.sample;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import at.wada811.dialog.interfaces.DialogFragmentCallbackProvider;

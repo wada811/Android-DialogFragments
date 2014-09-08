@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Activity -->
         <activity
             android:name="at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity"
             android:label="@string/title_activity_alert_dialog_fragment_examples" >
@@ -39,6 +40,11 @@
         <activity
             android:name="at.wada811.dialog.sample.StringPickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_string_picker_dialog_fragment_examples" >
+        </activity>
+        <!-- Fragment -->
+        <activity
+            android:name=".alertdialogfragment.AlertDialogFragmentExamplesFragmentActivity"
+            android:label="@string/title_activity_alert_dialog_fragment_examples" >
         </activity>
     </application>
 

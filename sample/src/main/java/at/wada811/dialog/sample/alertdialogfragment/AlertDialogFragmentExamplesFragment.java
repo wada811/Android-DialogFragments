@@ -1,12 +1,12 @@
 package at.wada811.dialog.sample.alertdialogfragment;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.support.v7.app.ActionBarActivity;
 import android.text.method.CharacterPickerDialog;
 import android.util.Log;
 import android.util.TypedValue;
@@ -35,48 +35,42 @@ import at.wada811.dialog.sample.alertdialogfragment.examples.MultiChoiceAlertDia
 import at.wada811.dialog.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
 
 
-public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
+public class AlertDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 
     public static final ArrayList<Example> items = new ArrayList<Example>();
-    final AlertDialogFragmentExamplesActivity self = this;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_alert_dialog_fragment_examples);
+    public void onAttach(Activity activity){
+        super.onAttach(activity);
 
         initExample();
         initListFragment();
     }
 
     private void initExample(){
-        items.add(new BasicAlertDialogExample(this));
-        items.add(new EventAlertDialogExample(this));
-        items.add(new ItemsAlertDialogExample(this));
-        items.add(new AdapterAlertDialogExample(this));
-        items.add(new SingleChoiceAlertDialogExample(this));
-        items.add(new MultiChoiceAlertDialogExample(this));
-        items.add(new CustomViewAlertDialogExample(this));
+        items.add(new BasicAlertDialogExample(getActivity()));
+        items.add(new EventAlertDialogExample(getActivity()));
+        items.add(new ItemsAlertDialogExample(getActivity()));
+        items.add(new AdapterAlertDialogExample(getActivity()));
+        items.add(new SingleChoiceAlertDialogExample(getActivity()));
+        items.add(new MultiChoiceAlertDialogExample(getActivity()));
+        items.add(new CustomViewAlertDialogExample(getActivity()));
     }
 
     private void initListFragment(){
-        ListFragment listFragment = new ListFragment(){
-            @Override
-            public void onListItemClick(ListView l, View v, int position, long id){
-                super.onListItemClick(l, v, position, id);
-                Example item = items.get(position);
-                item.showDialog(self, getSupportFragmentManager());
-            }
-        };
-        listFragment.setListAdapter(
+        setListAdapter(
             new ArrayAdapter<Example>(
-                this, android.R.layout.simple_list_item_1, items
+                getActivity(), android.R.layout.simple_list_item_1, items
             )
         );
-        getSupportFragmentManager().beginTransaction()
-                                   .add(android.R.id.content, listFragment)
-                                   .commit();
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id){
+        super.onListItemClick(l, v, position, id);
+        Example item = items.get(position);
+        item.showDialog(this, getChildFragmentManager());
     }
 
     @Override
@@ -86,49 +80,49 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
             public void onShow(DialogFragmentInterface dialog){
                 String text = "onShow";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCancel(DialogFragmentInterface dialog){
                 String text = "onCancel";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDismiss(DialogFragmentInterface dialog){
                 String text = "onDismiss";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClickPositive(DialogFragmentInterface dialog){
                 String text = "onClickPositive";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClickNeutral(DialogFragmentInterface dialog){
                 String text = "onClickNeutral";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClickNegative(DialogFragmentInterface dialog){
                 String text = "onClickNegative";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public boolean onKey(DialogFragmentInterface dialog, int keyCode, KeyEvent event){
                 String text = "onKey[keyCode: " + keyCode + ", KeyEvent: " + event + "]";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
                 return false;
             }
 
@@ -138,7 +132,7 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
                 String[] items = extra.getStringArray("items");
                 String text = "onItemClick[position: " + position + ", item: " + items[position] + "]";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -153,30 +147,32 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
                 Bundle extra = new Bundle();
                 extra.putStringArray("items", items);
                 dialog.setExtra(extra);
-                return new ArrayAdapter<String>(self, android.R.layout.simple_list_item_1, items);
+                return new ArrayAdapter<String>(
+                    getActivity(), android.R.layout.simple_list_item_1, items
+                );
             }
 
             @Override
             public void onSingleChoiceClick(DialogFragmentInterface dialog, int position){
                 Bundle extra = dialog.getExtra();
                 String[] items = extra.getStringArray("items");
-                String text = "onSingleChoiceClick[position: " + position + ", item: " + items[position] + "]";
+                String text = "onItemClick[position: " + position + ", item: " + items[position] + "]";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onMultiChoiceClick(DialogFragmentInterface dialog, int position, boolean isChecked){
                 Bundle extra = dialog.getExtra();
                 String[] items = extra.getStringArray("items");
-                String text = "onMultiChoiceClick[position: " + position + ", item: " + items[position] + ", isChecked: " + isChecked + "]";
+                String text = "onItemClick[position: " + position + ", item: " + items[position] + ", isChecked: " + isChecked + "]";
                 Log.v(dialog.getTag(), text);
-                Toast.makeText(self, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public View getCustomTitle(DialogFragmentInterface dialog){
-                TextView titleView = new TextView(self);
+                TextView titleView = new TextView(getActivity());
                 titleView.setText(dialog.getTag());
                 titleView.setPadding(0, 24, 0, 24);
                 titleView.setGravity(Gravity.CENTER);
@@ -186,7 +182,7 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
 
             @Override
             public View getView(DialogFragmentInterface dialog){
-                ImageView imageView = new ImageView(self);
+                ImageView imageView = new ImageView(getActivity());
                 imageView.setImageResource(R.drawable.ic_launcher);
                 imageView.setPadding(0, 24, 0, 24);
                 return imageView;

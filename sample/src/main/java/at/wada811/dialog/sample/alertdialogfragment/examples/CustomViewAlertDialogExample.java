@@ -10,23 +10,23 @@ import at.wada811.dialog.sample.R;
 /**
  * Created by wada on 2014/09/07.
  */
-public class BasicAlertDialogExample extends Example{
+public class CustomViewAlertDialogExample extends Example{
 
     private Context context;
 
-    public BasicAlertDialogExample(Context context){
-        super(BasicAlertDialogExample.class.getSimpleName());
+    public CustomViewAlertDialogExample(Context context){
+        super(CustomViewAlertDialogExample.class.getSimpleName());
         this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
         new AlertDialogFragment.Builder(context).setIcon(R.drawable.ic_launcher)
-            .setTitle(R.string.dialog_title)
-            .setMessage(R.string.dialog_message)
+            .setCustomTitle(provider)
+            .setView(provider)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, BasicAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, CustomViewAlertDialogExample.class.getSimpleName());
     }
 
 }

@@ -394,9 +394,9 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     DialogFragmentCallback getDialogFragmentCallback(){
         DialogFragmentCallback listener = null;
-        if(getTargetFragment() instanceof DialogFragmentCallbackProvider){
-            Log.v(getTag(), "getTargetFragment() instanceof DialogEventListenerPovider");
-            DialogFragmentCallbackProvider provider = (DialogFragmentCallbackProvider)getTargetFragment();
+        if(getParentFragment() instanceof DialogFragmentCallbackProvider){
+            Log.v(getTag(), "getParentFragment() instanceof DialogEventListenerPovider");
+            DialogFragmentCallbackProvider provider = (DialogFragmentCallbackProvider)getParentFragment();
             listener = provider.getDialogFragmentCallback();
         }else if(getActivity() instanceof DialogFragmentCallbackProvider){
             Log.v(getTag(), "getActivity() instanceof DialogEventListenerPovider");
