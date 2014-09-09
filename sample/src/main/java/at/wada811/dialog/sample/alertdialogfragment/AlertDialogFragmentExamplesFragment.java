@@ -24,6 +24,7 @@ import at.wada811.dialog.interfaces.DialogFragmentCallback;
 import at.wada811.dialog.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.dialog.interfaces.DialogFragmentInterface;
 import at.wada811.dialog.interfaces.SimpleDialogFragmentCallback;
+import at.wada811.dialog.sample.Const;
 import at.wada811.dialog.sample.Example;
 import at.wada811.dialog.sample.R;
 import at.wada811.dialog.sample.alertdialogfragment.examples.AdapterAlertDialogExample;
@@ -39,6 +40,14 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 
     private ArrayList<Example> items;
+
+    public static AlertDialogFragmentExamplesFragment newInstance(boolean isInActivity){
+        AlertDialogFragmentExamplesFragment fragment = new AlertDialogFragmentExamplesFragment();
+        Bundle args = new Bundle();
+        args.putBoolean(Const.KEY_IS_IN_ACTIVITY, isInActivity);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -70,7 +79,8 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
         Example item = items.get(position);
-        item.showDialog(this, getChildFragmentManager());
+        boolean isInActivity = getArguments().getBoolean(Const.KEY_IS_IN_ACTIVITY);
+        item.showDialog(this, isInActivity ? getFragmentManager() : getChildFragmentManager());
     }
 
     @Override

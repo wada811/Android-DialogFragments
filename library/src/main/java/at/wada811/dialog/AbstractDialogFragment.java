@@ -342,8 +342,8 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
     protected void bindDismissListener(){
         DialogFragmentCallback listener = getDialogFragmentCallback();
         if(listener != null){
-            dismiss();
             listener.onDismiss(this);
+            dismiss();
         }
     }
 
@@ -394,6 +394,10 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     DialogFragmentCallback getDialogFragmentCallback(){
         DialogFragmentCallback listener = null;
+        if(getActivity() == null){
+            Log.v(getTag(), "getActivity() returns null. Maybe the activity destroyed by rotation.");
+            return null;
+        }
         if(getParentFragment() instanceof DialogFragmentCallbackProvider){
             Log.v(getTag(), "getParentFragment() instanceof DialogEventListenerPovider");
             DialogFragmentCallbackProvider provider = (DialogFragmentCallbackProvider)getParentFragment();

@@ -5,7 +5,6 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.text.method.CharacterPickerDialog;
 import android.util.Log;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -24,15 +22,9 @@ import at.wada811.dialog.interfaces.DialogFragmentCallback;
 import at.wada811.dialog.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.dialog.interfaces.DialogFragmentInterface;
 import at.wada811.dialog.interfaces.SimpleDialogFragmentCallback;
+import at.wada811.dialog.sample.Const;
 import at.wada811.dialog.sample.Example;
 import at.wada811.dialog.sample.R;
-import at.wada811.dialog.sample.alertdialogfragment.examples.AdapterAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.BasicAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.CustomViewAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.EventAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.ItemsAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.MultiChoiceAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
 
 
 public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
@@ -47,39 +39,12 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
         // setContentView(R.layout.activity_alert_dialog_fragment_examples);
 
         if(savedInstanceState == null){
-            initExample();
-            initListFragment();
+            boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
+            getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_alert_dialog_fragment_examples_in_activity : R.string.title_activity_alert_dialog_fragment_examples_in_fragment);
+            getSupportFragmentManager().beginTransaction().replace(
+                android.R.id.content, AlertDialogFragmentExamplesFragment.newInstance(isInActivity)
+            ).commit();
         }
-    }
-
-    private void initExample(){
-        items = new ArrayList<Example>();
-        items.add(new BasicAlertDialogExample(this));
-        items.add(new EventAlertDialogExample(this));
-        items.add(new ItemsAlertDialogExample(this));
-        items.add(new AdapterAlertDialogExample(this));
-        items.add(new SingleChoiceAlertDialogExample(this));
-        items.add(new MultiChoiceAlertDialogExample(this));
-        items.add(new CustomViewAlertDialogExample(this));
-    }
-
-    private void initListFragment(){
-        ListFragment listFragment = new ListFragment(){
-            @Override
-            public void onListItemClick(ListView l, View v, int position, long id){
-                super.onListItemClick(l, v, position, id);
-                Example item = items.get(position);
-                item.showDialog(self, getSupportFragmentManager());
-            }
-        };
-        listFragment.setListAdapter(
-            new ArrayAdapter<Example>(
-                this, android.R.layout.simple_list_item_1, items
-            )
-        );
-        getSupportFragmentManager().beginTransaction()
-            .replace(android.R.id.content, listFragment)
-            .commit();
     }
 
     @Override
