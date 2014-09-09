@@ -1,54 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="at.wada811.dialog.sample" >
+<manifest
+    package="at.wada811.dialog.sample"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="at.wada811.dialog.sample.MainActivity"
-            android:label="@string/app_name" >
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <!-- AlertDialogFragment Examples -->
         <activity
             android:name=".dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity"
-            android:label="@string/title_activity_dialog_fragment_callback_provider" >
+            android:label="@string/title_activity_dialog_fragment_callback_provider">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_alert_dialog_fragment_examples_in_activity" >
+            android:name=".alertdialogfragment.AlertDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_alert_dialog_fragment_examples_in_activity">
         </activity>
         <activity
             android:name=".alertdialogfragment.AlertDialogFragmentExamplesFragmentActivity"
-            android:label="@string/title_activity_alert_dialog_fragment_examples_in_fragment" >
+            android:label="@string/title_activity_alert_dialog_fragment_examples_in_fragment">
+        </activity>
+        <!-- ProgressDialogFragment Examples -->
+        <activity
+            android:name=".progressdialogfragment.ProgressDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_progress_dialog_fragment_examples">
+        </activity>
+
+        <service
+            android:name="at.wada811.dialog.sample.progressdialogfragment.examples.intentservice.SpinnerProgressDialogIntentService"
+            android:exported="false">
+        </service>
+        <service
+            android:name="at.wada811.dialog.sample.progressdialogfragment.examples.intentservice.HorizontalProgressDialogIntentService"
+            android:exported="false">
+        </service>
+
+        <activity
+            android:name=".DatePickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_date_picker_dialog_fragment_examples">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.ProgressDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_progress_dialog_fragment_examples" >
+            android:name=".TimePickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_time_picker_dialog_fragment_examples">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.DatePickerDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_date_picker_dialog_fragment_examples" >
+            android:name=".NumberPickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_number_picker_dialog_fragment_examples">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.TimePickerDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_time_picker_dialog_fragment_examples" >
+            android:name=".StringPickerDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_string_picker_dialog_fragment_examples">
         </activity>
-        <activity
-            android:name="at.wada811.dialog.sample.NumberPickerDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_number_picker_dialog_fragment_examples" >
-        </activity>
-        <activity
-            android:name="at.wada811.dialog.sample.StringPickerDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_string_picker_dialog_fragment_examples" >
-        </activity>
+
     </application>
 
 </manifest>

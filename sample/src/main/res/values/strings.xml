@@ -19,6 +19,11 @@
     <string name="example_dialog_fragment_callback_in_activity">DialogFragmentCallback in Activity</string>
     <string name="example_dialog_fragment_callback_in_fragment">DialogFragmentCallback in Fragment</string>
 
+    <string name="example_spinner_progress_dialog_with_loader">Spinner ProgressDialog with Loader</string>
+    <string name="example_horizontal_progress_dialog_within_loader">Horizontal ProgressDialog within Loader</string>
+    <string name="example_spinner_progress_dialog_with_intent_service">Spinner ProgressDialog with IntentService</string>
+    <string name="example_horizontal_progress_dialog_with_intent_service">Horizontal ProgressDialog with IntentService</string>
+
     <!-- Dialog -->
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancel</string>

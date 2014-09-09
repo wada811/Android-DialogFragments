@@ -16,6 +16,7 @@ import at.wada811.dialog.TimePickerDialogFragment;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesFragmentActivity;
 import at.wada811.dialog.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity;
+import at.wada811.dialog.sample.progressdialogfragment.ProgressDialogFragmentExamplesActivity;
 
 
 public class MainActivity extends ActionBarActivity{
@@ -97,9 +98,7 @@ public class MainActivity extends ActionBarActivity{
         };
         listFragment.setListAdapter(
             new ArrayAdapter<Examples>(
-                this,
-                android.R.layout.simple_list_item_1,
-                items
+                this, android.R.layout.simple_list_item_1, items
             )
         );
         getSupportFragmentManager().beginTransaction()

@@ -21,6 +21,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import at.wada811.dialog.interfaces.DialogFragmentInterface;
@@ -190,6 +191,30 @@ public class ProgressDialogFragment extends AlertDialogFragment implements Dialo
         super.onDestroyView();
         Log.w(TAG, "onDestroyView");
         progressDialog = null;
+    }
+
+    @Override
+    public void dismiss(){
+        new Handler(Looper.getMainLooper()).post(
+            new Runnable(){
+                @Override
+                public void run(){
+                    ProgressDialogFragment.super.dismiss();
+                }
+            }
+        );
+    }
+
+    @Override
+    public void dismissAllowingStateLoss(){
+        new Handler(Looper.getMainLooper()).post(
+            new Runnable(){
+                @Override
+                public void run(){
+                    ProgressDialogFragment.super.dismissAllowingStateLoss();
+                }
+            }
+        );
     }
 
     @Override
