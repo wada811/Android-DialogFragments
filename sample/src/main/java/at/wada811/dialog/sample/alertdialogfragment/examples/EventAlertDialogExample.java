@@ -31,7 +31,7 @@ public class EventAlertDialogExample extends Example{
             .setOnCancelListener(provider)
             .setOnDismissListener(provider)
             .setOnKeyListener(provider)
-            .show(fragmentManager, EventAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

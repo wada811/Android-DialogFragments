@@ -25,7 +25,7 @@ public class AdapterAlertDialogExample extends Example{
             .setTitle(R.string.dialog_title)
             .setAdapter(provider)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, AdapterAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

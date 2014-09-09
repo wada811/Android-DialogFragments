@@ -26,7 +26,7 @@ public class CustomViewAlertDialogExample extends Example{
             .setView(provider)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, CustomViewAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

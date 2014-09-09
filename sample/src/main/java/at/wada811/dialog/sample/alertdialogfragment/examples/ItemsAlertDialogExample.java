@@ -41,7 +41,7 @@ public class ItemsAlertDialogExample extends Example{
             .setItems(items)
             .setExtra(extra)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, ItemsAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

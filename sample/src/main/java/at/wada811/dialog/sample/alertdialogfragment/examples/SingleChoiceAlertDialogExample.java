@@ -42,7 +42,7 @@ public class SingleChoiceAlertDialogExample extends Example{
             .setExtra(extra)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, SingleChoiceAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

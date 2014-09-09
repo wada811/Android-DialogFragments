@@ -49,7 +49,7 @@ public class MultiChoiceAlertDialogExample extends Example{
             .setExtra(extra)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, MultiChoiceAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }

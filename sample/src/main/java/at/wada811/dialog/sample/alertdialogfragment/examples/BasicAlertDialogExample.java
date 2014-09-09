@@ -26,7 +26,7 @@ public class BasicAlertDialogExample extends Example{
             .setMessage(R.string.dialog_message)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(fragmentManager, BasicAlertDialogExample.class.getSimpleName());
+            .show(fragmentManager, label);
     }
 
 }
