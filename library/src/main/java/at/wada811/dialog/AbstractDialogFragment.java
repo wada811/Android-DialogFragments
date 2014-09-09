@@ -242,12 +242,11 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
      * Even in a cancelable dialog, the dialog may be dismissed for reasons other than being
      * canceled or one of the supplied choices being selected. If you are interested in listening
      * for all cases where the dialog is dismissed and not just when it is canceled, see
-     * {@link #setOnDismissListener(android.content.DialogInterface.OnDismissListener)
-     * setOnDismissListener}.
+     * {@link #setOnDismissListener}.
      * </p>
      *
      * @see #setCancelable(boolean)
-     * @see #setOnDismissListener(android.content.DialogInterface.OnDismissListener)
+     * @see #setOnDismissListener
      *
      * @param provider
      */
