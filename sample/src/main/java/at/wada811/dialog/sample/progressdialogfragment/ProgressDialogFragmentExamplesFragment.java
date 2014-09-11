@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
-import at.wada811.dialog.sample.Const;
 import at.wada811.dialog.sample.Examples;
 import at.wada811.dialog.sample.R;
 import at.wada811.dialog.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity;
@@ -59,26 +58,13 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
             )
         );
         {
-            Intent intent = new Intent(
-                getActivity(), LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
-            );
-            intent.putExtra(Const.KEY_IS_RETAIN, false);
             items.add(
                 new Examples(
                     getString(R.string.example_spinner_progress_dialog_with_loader_in_fragment),
-                    intent
-                )
-            );
-        }
-        {
-            Intent intent = new Intent(
-                getActivity(), LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
-            );
-            intent.putExtra(Const.KEY_IS_RETAIN, false);
-            items.add(
-                new Examples(
-                    getString(R.string.example_spinner_progress_dialog_with_loader_in_retain_fragment),
-                    intent
+                    new Intent(
+                        getActivity(),
+                        LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
+                    )
                 )
             );
         }

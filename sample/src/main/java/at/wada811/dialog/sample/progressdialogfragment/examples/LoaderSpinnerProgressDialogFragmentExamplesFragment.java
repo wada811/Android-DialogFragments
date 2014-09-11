@@ -38,11 +38,10 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
 
     private static final int LOADER_ID = 811;
 
-    public static LoaderSpinnerProgressDialogFragmentExamplesFragment newInstance(boolean isRetain){
+    public static LoaderSpinnerProgressDialogFragmentExamplesFragment newInstance(){
         LoaderSpinnerProgressDialogFragmentExamplesFragment fragment = new LoaderSpinnerProgressDialogFragmentExamplesFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
-        fragment.setRetainInstance(isRetain);
         return fragment;
     }
 
@@ -96,7 +95,6 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
             "onCreateLoader"
         );
         ProgressDialogFragment dialogFragment = new ProgressDialogFragment();
-        dialogFragment.setRetainInstance(true);
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.example_spinner_progress_dialog_with_loader);
         dialogFragment.setProgressStyle(ProgressDialogFragment.STYLE_SPINNER);

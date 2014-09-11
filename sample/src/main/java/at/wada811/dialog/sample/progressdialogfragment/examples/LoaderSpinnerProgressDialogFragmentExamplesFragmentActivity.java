@@ -27,12 +27,11 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        boolean isRetain = getIntent().getBooleanExtra(Const.KEY_IS_RETAIN, true);
-        getSupportActionBar().setTitle(isRetain ? R.string.example_spinner_progress_dialog_with_loader_in_retain_fragment : R.string.example_spinner_progress_dialog_with_loader_in_fragment);
+        getSupportActionBar().setTitle(R.string.example_spinner_progress_dialog_with_loader_in_fragment);
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(
                 android.R.id.content,
-                LoaderSpinnerProgressDialogFragmentExamplesFragment.newInstance(isRetain)
+                LoaderSpinnerProgressDialogFragmentExamplesFragment.newInstance()
             ).commit();
         }
     }

@@ -37,16 +37,10 @@
 
     <string name="example_progress_dialog_fragment_in_activity">ProgressDialogFragment in Activity</string>
     <string name="example_progress_dialog_fragment_in_fragment">ProgressDialogFragment in Fragment</string>
-    <string name="example_progress_dialog_fragment_in_retain_fragment">ProgressDialogFragment in Retain Fragment</string>
 
     <string name="example_spinner_progress_dialog_with_loader">Spinner ProgressDialog with Loader</string>
     <string name="example_spinner_progress_dialog_with_loader_in_activity">Spinner ProgressDialog with Loader in Activity</string>
     <string name="example_spinner_progress_dialog_with_loader_in_fragment">Spinner ProgressDialog with Loader in Fragment</string>
-    <string name="example_spinner_progress_dialog_with_loader_in_retain_fragment">Spinner ProgressDialog with Loader in Retain Fragment</string>
-
-    <string name="example_horizontal_progress_dialog_within_loader">Horizontal ProgressDialog within Loader</string>
-    <string name="example_spinner_progress_dialog_with_intent_service">Spinner ProgressDialog with IntentService</string>
-    <string name="example_horizontal_progress_dialog_with_intent_service">Horizontal ProgressDialog with IntentService</string>
 
     <!-- Dialog -->
     <string name="dialog_ok">OK</string>
