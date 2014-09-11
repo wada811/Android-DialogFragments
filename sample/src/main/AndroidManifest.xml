@@ -64,12 +64,14 @@
             android:name="at.wada811.dialog.sample.timepickerdialogfragment.TimePickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_time_picker_dialog_fragment_examples">
         </activity>
+        <!-- NumberPickerDialogFragment Examples -->
         <activity
-            android:name=".NumberPickerDialogFragmentExamplesActivity"
+            android:name="at.wada811.dialog.sample.numberpickerdialogfragment.NumberPickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_number_picker_dialog_fragment_examples">
         </activity>
+        <!-- StringPickerDialogFragment Examples -->
         <activity
-            android:name=".StringPickerDialogFragmentExamplesActivity"
+            android:name="at.wada811.dialog.sample.stringpickerdialogfragment.StringPickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_string_picker_dialog_fragment_examples">
         </activity>
 

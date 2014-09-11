@@ -30,7 +30,9 @@ import at.wada811.dialog.TimePickerDialogFragment;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity;
+import at.wada811.dialog.sample.numberpickerdialogfragment.NumberPickerDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.progressdialogfragment.ProgressDialogFragmentExamplesActivity;
+import at.wada811.dialog.sample.stringpickerdialogfragment.StringPickerDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.timepickerdialogfragment.TimePickerDialogFragmentExamplesActivity;
 
 
@@ -130,7 +132,6 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-
         {
             Intent intent = new Intent(
                 getActivity(),
@@ -157,18 +158,58 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        items.add(
-            new Examples(
-                NumberPickerDialogFragment.class.getSimpleName(),
-                new Intent(getActivity(), NumberPickerDialogFragmentExamplesActivity.class)
-            )
-        );
-        items.add(
-            new Examples(
-                StringPickerDialogFragment.class.getSimpleName(),
-                new Intent(getActivity(), StringPickerDialogFragmentExamplesActivity.class)
-            )
-        );
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                NumberPickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_number_picker_dialog_fragment_examples_in_activity),
+                    intent
+                )
+            );
+        }
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                NumberPickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_number_picker_dialog_fragment_examples_in_fragment),
+                    intent
+                )
+            );
+        }
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                StringPickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_string_picker_dialog_fragment_examples_in_activity),
+                    intent
+                )
+            );
+        }
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                StringPickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_string_picker_dialog_fragment_examples_in_fragment),
+                    intent
+                )
+            );
+        }
     }
 
 
