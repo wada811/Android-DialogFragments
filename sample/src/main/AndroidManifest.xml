@@ -34,7 +34,7 @@
         </activity>
         <!-- AlertDialogFragment Examples -->
         <activity
-            android:name=".dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity"
+            android:name=".dialogfragmentcallbackprovider.DialogFragmentCallbackProviderActivity"
             android:label="@string/title_activity_dialog_fragment_callback_provider">
         </activity>
         <activity
