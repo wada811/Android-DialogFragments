@@ -27,11 +27,10 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 
-
-public class DialogFragmentCallbackProviderFragmentActivity extends ActionBarActivity
+public class DialogFragmentCallbackProviderActivity extends ActionBarActivity
     implements DialogFragmentCallbackProvider{
 
-    final DialogFragmentCallbackProviderFragmentActivity self = this;
+    final DialogFragmentCallbackProviderActivity self = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
