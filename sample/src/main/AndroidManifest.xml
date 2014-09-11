@@ -48,11 +48,11 @@
         </activity>
         <activity
             android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity"
-            android:label="@string/title_activity_progress_dialog_fragment_examples">
+            android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_activity">
         </activity>
         <activity
             android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
-            android:label="@string/title_activity_progress_dialog_fragment_examples">
+            android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_fragment">
         </activity>
         <activity
             android:name=".DatePickerDialogFragmentExamplesActivity"

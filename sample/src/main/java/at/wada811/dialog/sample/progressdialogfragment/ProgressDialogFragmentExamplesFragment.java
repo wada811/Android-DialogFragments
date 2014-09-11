@@ -51,7 +51,7 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
         items = new ArrayList<Examples>();
         items.add(
             new Examples(
-                getString(R.string.example_spinner_progress_dialog_with_loader_in_activity),
+                getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity),
                 new Intent(
                     getActivity(), LoaderSpinnerProgressDialogFragmentExamplesActivity.class
                 )
@@ -60,7 +60,7 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
         {
             items.add(
                 new Examples(
-                    getString(R.string.example_spinner_progress_dialog_with_loader_in_fragment),
+                    getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment),
                     new Intent(
                         getActivity(),
                         LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class

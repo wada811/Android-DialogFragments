@@ -96,7 +96,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
         );
         ProgressDialogFragment dialogFragment = new ProgressDialogFragment();
         dialogFragment.setIcon(R.drawable.ic_launcher);
-        dialogFragment.setTitle(R.string.example_spinner_progress_dialog_with_loader);
+        dialogFragment.setTitle(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment);
         dialogFragment.setProgressStyle(ProgressDialogFragment.STYLE_SPINNER);
         dialogFragment.setMessage("Loading...");
         dialogFragment.setOnCancelListener(this);

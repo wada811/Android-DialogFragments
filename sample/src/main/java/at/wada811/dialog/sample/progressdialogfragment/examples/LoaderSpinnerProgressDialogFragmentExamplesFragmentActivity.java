@@ -27,7 +27,6 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setTitle(R.string.example_spinner_progress_dialog_with_loader_in_fragment);
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(
                 android.R.id.content,
