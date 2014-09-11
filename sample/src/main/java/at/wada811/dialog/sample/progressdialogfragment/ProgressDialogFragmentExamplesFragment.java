@@ -1,53 +1,26 @@
 package at.wada811.dialog.sample.progressdialogfragment;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.text.method.CharacterPickerDialog;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 import java.util.ArrayList;
-import at.wada811.dialog.interfaces.DialogFragmentCallback;
-import at.wada811.dialog.interfaces.DialogFragmentCallbackProvider;
-import at.wada811.dialog.interfaces.DialogFragmentInterface;
-import at.wada811.dialog.interfaces.SimpleDialogFragmentCallback;
 import at.wada811.dialog.sample.Const;
-import at.wada811.dialog.sample.Example;
+import at.wada811.dialog.sample.Examples;
 import at.wada811.dialog.sample.R;
-import at.wada811.dialog.sample.alertdialogfragment.examples.AdapterAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.BasicAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.CustomViewAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.EventAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.ItemsAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.MultiChoiceAlertDialogExample;
-import at.wada811.dialog.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
-import at.wada811.dialog.sample.progressdialogfragment.examples.ProgressDialogFragmentExample;
-import at.wada811.dialog.sample.progressdialogfragment.examples.asynctaskloader.LoaderHorizontalProgressDialogExample;
-import at.wada811.dialog.sample.progressdialogfragment.examples.asynctaskloader.LoaderSpinnerProgressDialogExample;
-import at.wada811.dialog.sample.progressdialogfragment.examples.intentservice.IntentServiceHorizontalProgressDialogExample;
-import at.wada811.dialog.sample.progressdialogfragment.examples.intentservice.IntentServiceSpinnerProgressDialogExample;
+import at.wada811.dialog.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity;
+import at.wada811.dialog.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity;
 
 
 public class ProgressDialogFragmentExamplesFragment extends ListFragment{
 
-    private ArrayList<ProgressDialogFragmentExample> items;
+    private ArrayList<Examples> items;
 
-    public static ProgressDialogFragmentExamplesFragment newInstance(boolean isInActivity){
+    public static ProgressDialogFragmentExamplesFragment newInstance(){
         ProgressDialogFragmentExamplesFragment fragment = new ProgressDialogFragmentExamplesFragment();
         Bundle args = new Bundle();
-        args.putBoolean(Const.KEY_IS_IN_ACTIVITY, isInActivity);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,16 +33,44 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
     }
 
     private void initExample(){
-        items = new ArrayList<ProgressDialogFragmentExample>();
-        items.add(new LoaderSpinnerProgressDialogExample(getActivity()));
-        items.add(new LoaderHorizontalProgressDialogExample(getActivity()));
-        items.add(new IntentServiceSpinnerProgressDialogExample(getActivity()));
-        items.add(new IntentServiceHorizontalProgressDialogExample(getActivity()));
+        items = new ArrayList<Examples>();
+        items.add(
+            new Examples(
+                getString(R.string.example_spinner_progress_dialog_with_loader_in_activity),
+                new Intent(
+                    getActivity(), LoaderSpinnerProgressDialogFragmentExamplesActivity.class
+                )
+            )
+        );
+        {
+            Intent intent = new Intent(
+                getActivity(), LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_RETAIN, false);
+            items.add(
+                new Examples(
+                    getString(R.string.example_spinner_progress_dialog_with_loader_in_fragment),
+                    intent
+                )
+            );
+        }
+        {
+            Intent intent = new Intent(
+                getActivity(), LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_RETAIN, false);
+            items.add(
+                new Examples(
+                    getString(R.string.example_spinner_progress_dialog_with_loader_in_retain_fragment),
+                    intent
+                )
+            );
+        }
     }
 
     private void initListFragment(){
         setListAdapter(
-            new ArrayAdapter<ProgressDialogFragmentExample>(
+            new ArrayAdapter<Examples>(
                 getActivity(), android.R.layout.simple_list_item_1, items
             )
         );
@@ -78,9 +79,8 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
-        ProgressDialogFragmentExample item = items.get(position);
-        boolean isInActivity = getArguments().getBoolean(Const.KEY_IS_IN_ACTIVITY);
-        item.startLoading(isInActivity ? getFragmentManager() : getChildFragmentManager(), getLoaderManager());
+        Examples item = items.get(position);
+        startActivity(item.intent);
     }
 
 }

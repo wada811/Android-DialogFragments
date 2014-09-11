@@ -38,9 +38,9 @@ public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_alert_dialog_fragment_examples);
 
+        boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
+        getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_alert_dialog_fragment_examples_in_activity : R.string.title_activity_alert_dialog_fragment_examples_in_fragment);
         if(savedInstanceState == null){
-            boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
-            getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_alert_dialog_fragment_examples_in_activity : R.string.title_activity_alert_dialog_fragment_examples_in_fragment);
             getSupportFragmentManager().beginTransaction().replace(
                 android.R.id.content, AlertDialogFragmentExamplesFragment.newInstance(isInActivity)
             ).commit();

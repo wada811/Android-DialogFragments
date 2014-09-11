@@ -9,8 +9,7 @@
     <string name="title_activity_dialog_fragment_callback_provider">DialogFragmentCallbackProvider Test</string>
     <string name="title_activity_alert_dialog_fragment_examples_in_activity">AlertDialogFragment in Activity</string>
     <string name="title_activity_alert_dialog_fragment_examples_in_fragment">AlertDialogFragment in Fragment</string>
-    <string name="title_activity_progress_dialog_fragment_examples_in_activity">ProgressDialogFragment in Activity</string>
-    <string name="title_activity_progress_dialog_fragment_examples_in_fragment">ProgressDialogFragment in Fragment</string>
+    <string name="title_activity_progress_dialog_fragment_examples">ProgressDialogFragment</string>
     <string name="title_activity_date_picker_dialog_fragment_examples">DatePickerDialogFragment examples</string>
     <string name="title_activity_time_picker_dialog_fragment_examples">TimePickerDialogFragment examples</string>
     <string name="title_activity_number_picker_dialog_fragment_examples">NumberPickerDialogFragment examples</string>
@@ -20,7 +19,15 @@
     <string name="example_dialog_fragment_callback_in_activity">DialogFragmentCallback in Activity</string>
     <string name="example_dialog_fragment_callback_in_fragment">DialogFragmentCallback in Fragment</string>
 
+    <string name="example_progress_dialog_fragment_in_activity">ProgressDialogFragment in Activity</string>
+    <string name="example_progress_dialog_fragment_in_fragment">ProgressDialogFragment in Fragment</string>
+    <string name="example_progress_dialog_fragment_in_retain_fragment">ProgressDialogFragment in Retain Fragment</string>
+
     <string name="example_spinner_progress_dialog_with_loader">Spinner ProgressDialog with Loader</string>
+    <string name="example_spinner_progress_dialog_with_loader_in_activity">Spinner ProgressDialog with Loader in Activity</string>
+    <string name="example_spinner_progress_dialog_with_loader_in_fragment">Spinner ProgressDialog with Loader in Fragment</string>
+    <string name="example_spinner_progress_dialog_with_loader_in_retain_fragment">Spinner ProgressDialog with Loader in Retain Fragment</string>
+
     <string name="example_horizontal_progress_dialog_within_loader">Horizontal ProgressDialog within Loader</string>
     <string name="example_spinner_progress_dialog_with_intent_service">Spinner ProgressDialog with IntentService</string>
     <string name="example_horizontal_progress_dialog_with_intent_service">Horizontal ProgressDialog with IntentService</string>

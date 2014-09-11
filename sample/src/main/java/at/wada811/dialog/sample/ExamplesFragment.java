@@ -9,7 +9,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import at.wada811.dialog.DatePickerDialogFragment;
 import at.wada811.dialog.NumberPickerDialogFragment;
-import at.wada811.dialog.ProgressDialogFragment;
 import at.wada811.dialog.StringPickerDialogFragment;
 import at.wada811.dialog.TimePickerDialogFragment;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
@@ -77,28 +76,13 @@ public class ExamplesFragment extends ListFragment{
             );
         }
         {
-            Intent intent = new Intent(
-                getActivity(),
-                ProgressDialogFragmentExamplesActivity.class
-            );
-            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
                 new Examples(
-                    getString(R.string.title_activity_progress_dialog_fragment_examples_in_activity),
-                    intent
-                )
-            );
-        }
-        {
-            Intent intent = new Intent(
-                getActivity(),
-                ProgressDialogFragmentExamplesActivity.class
-            );
-            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
-            items.add(
-                new Examples(
-                    getString(R.string.title_activity_progress_dialog_fragment_examples_in_fragment),
-                    intent
+                    getString(R.string.title_activity_progress_dialog_fragment_examples),
+                    new Intent(
+                        getActivity(),
+                        ProgressDialogFragmentExamplesActivity.class
+                    )
                 )
             );
         }
