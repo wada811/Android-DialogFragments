@@ -55,7 +55,7 @@
             android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_fragment">
         </activity>
         <activity
-            android:name=".DatePickerDialogFragmentExamplesActivity"
+            android:name=".datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_date_picker_dialog_fragment_examples">
         </activity>
         <activity

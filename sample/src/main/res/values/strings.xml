@@ -29,6 +29,8 @@
     <string name="title_activity_progress_dialog_fragment_with_loader_in_activity">ProgressDialogFragment with Loader in Activity</string>
     <string name="title_activity_progress_dialog_fragment_with_loader_in_fragment">ProgressDialogFragment with Loader in Fragment</string>
     <string name="title_activity_date_picker_dialog_fragment_examples">DatePickerDialogFragment examples</string>
+    <string name="title_activity_date_picker_dialog_fragment_examples_in_activity">DatePickerDialogFragment in Activity</string>
+    <string name="title_activity_date_picker_dialog_fragment_examples_in_fragment">DatePickerDialogFragment in Fragment</string>
     <string name="title_activity_time_picker_dialog_fragment_examples">TimePickerDialogFragment examples</string>
     <string name="title_activity_number_picker_dialog_fragment_examples">NumberPickerDialogFragment examples</string>
     <string name="title_activity_string_picker_dialog_fragment_examples">StringPickerDialogFragment examples</string>

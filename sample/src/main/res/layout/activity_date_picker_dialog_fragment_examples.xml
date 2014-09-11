@@ -22,7 +22,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="at.wada811.dialog.sample.DatePickerDialogFragmentExamplesActivity">
+    tools:context="at.wada811.dialog.sample.datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity">
 
     <TextView
         android:text="@string/hello_world"

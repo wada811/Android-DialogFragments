@@ -28,6 +28,7 @@ import at.wada811.dialog.NumberPickerDialogFragment;
 import at.wada811.dialog.StringPickerDialogFragment;
 import at.wada811.dialog.TimePickerDialogFragment;
 import at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
+import at.wada811.dialog.sample.datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity;
 import at.wada811.dialog.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity;
 import at.wada811.dialog.sample.progressdialogfragment.ProgressDialogFragmentExamplesActivity;
 
@@ -102,12 +103,32 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        items.add(
-            new Examples(
-                DatePickerDialogFragment.class.getSimpleName(),
-                new Intent(getActivity(), DatePickerDialogFragmentExamplesActivity.class)
-            )
-        );
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                DatePickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_date_picker_dialog_fragment_examples_in_activity),
+                    intent
+                )
+            );
+        }
+        {
+            Intent intent = new Intent(
+                getActivity(),
+                DatePickerDialogFragmentExamplesActivity.class
+            );
+            intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
+            items.add(
+                new Examples(
+                    getString(R.string.title_activity_date_picker_dialog_fragment_examples_in_fragment),
+                    intent
+                )
+            );
+        }
         items.add(
             new Examples(
                 TimePickerDialogFragment.class.getSimpleName(),
