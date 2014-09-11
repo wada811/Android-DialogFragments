@@ -21,7 +21,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "at.wada811.dialog.example"
+        applicationId "at.wada811.android.dialogfragments.example"
         minSdkVersion 10
         targetSdkVersion 19
         versionCode 1

@@ -16,7 +16,7 @@
   -->
 
 <manifest
-    package="at.wada811.dialog.sample"
+    package="at.wada811.android.dialogfragments.sample"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -34,44 +34,44 @@
         </activity>
         <!-- AlertDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity"
+            android:name=".dialogfragmentcallbackprovider.DialogFragmentCallbackProviderFragmentActivity"
             android:label="@string/title_activity_dialog_fragment_callback_provider">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity"
+            android:name=".alertdialogfragment.AlertDialogFragmentExamplesActivity"
             android:label="@string/title_activity_alert_dialog_fragment_examples_in_activity">
         </activity>
         <!-- ProgressDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.progressdialogfragment.ProgressDialogFragmentExamplesActivity"
+            android:name=".progressdialogfragment.ProgressDialogFragmentExamplesActivity"
             android:label="@string/title_activity_progress_dialog_fragment_examples">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity"
+            android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity"
             android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_activity">
         </activity>
         <activity
-            android:name="at.wada811.dialog.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
+            android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
             android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_fragment">
         </activity>
         <!-- DatePickerDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity"
+            android:name=".datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_date_picker_dialog_fragment_examples">
         </activity>
         <!-- TimePickerDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.timepickerdialogfragment.TimePickerDialogFragmentExamplesActivity"
+            android:name=".timepickerdialogfragment.TimePickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_time_picker_dialog_fragment_examples">
         </activity>
         <!-- NumberPickerDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.numberpickerdialogfragment.NumberPickerDialogFragmentExamplesActivity"
+            android:name=".numberpickerdialogfragment.NumberPickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_number_picker_dialog_fragment_examples">
         </activity>
         <!-- StringPickerDialogFragment Examples -->
         <activity
-            android:name="at.wada811.dialog.sample.stringpickerdialogfragment.StringPickerDialogFragmentExamplesActivity"
+            android:name=".stringpickerdialogfragment.StringPickerDialogFragmentExamplesActivity"
             android:label="@string/title_activity_string_picker_dialog_fragment_examples">
         </activity>
 
