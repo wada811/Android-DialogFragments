@@ -33,7 +33,6 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples.BasicTimePickerDialogExample;
 
-
 public class TimePickerDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 

@@ -25,9 +25,6 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-/**
- * Created by wada on 2014/09/07.
- */
 public class BasicDatePickerDialogExample extends Example{
 
     private Context context;

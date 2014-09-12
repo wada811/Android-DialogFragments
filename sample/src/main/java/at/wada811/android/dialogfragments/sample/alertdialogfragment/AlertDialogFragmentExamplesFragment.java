@@ -50,7 +50,6 @@ import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.It
 import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.MultiChoiceAlertDialogExample;
 import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
 
-
 public class AlertDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 

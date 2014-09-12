@@ -19,7 +19,6 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
-
 public class ProgressDialogFragmentExamplesActivity extends ActionBarActivity{
 
     @Override

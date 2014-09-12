@@ -33,7 +33,6 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.BasicStringPickerDialogExample;
 
-
 public class StringPickerDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 

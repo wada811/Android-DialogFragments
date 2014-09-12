@@ -17,13 +17,9 @@
 package at.wada811.android.dialogfragments.sample;
 
 import android.support.v4.app.FragmentManager;
-
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 
-/**
- * Created by wada on 2014/09/07.
- */
-public abstract class Example {
+public abstract class Example{
 
     public String label;
 
@@ -34,7 +30,7 @@ public abstract class Example {
     public abstract void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager);
 
     @Override
-    public String toString() {
+    public String toString(){
         return label;
     }
 }

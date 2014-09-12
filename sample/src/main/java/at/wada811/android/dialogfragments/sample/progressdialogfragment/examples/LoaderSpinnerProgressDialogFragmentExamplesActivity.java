@@ -34,7 +34,6 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import at.wada811.android.dialogfragments.sample.R;
 
-
 public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionBarActivity
     implements OnItemClickListener, DialogFragmentCallbackProvider, LoaderCallbacks<Object>{
 

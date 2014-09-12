@@ -28,7 +28,6 @@ import at.wada811.android.dialogfragments.sample.R;
 import at.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity;
 import at.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity;
 
-
 public class ProgressDialogFragmentExamplesFragment extends ListFragment{
 
     private ArrayList<Examples> items;

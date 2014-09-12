@@ -18,9 +18,6 @@ package at.wada811.android.dialogfragments.sample;
 
 import android.content.Intent;
 
-/**
- * Created by wada on 2014/09/07.
- */
 public class Examples{
 
     public String label;
@@ -31,9 +28,8 @@ public class Examples{
         this.intent = intent;
     }
 
-
     @Override
-    public String toString() {
+    public String toString(){
         return label;
     }
 }

@@ -28,7 +28,6 @@ import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallbac
 import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.R;
 
-
 public class DatePickerDialogFragmentExamplesActivity extends ActionBarActivity
     implements DialogFragmentCallbackProvider{
 

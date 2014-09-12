@@ -18,9 +18,7 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment.example
 import android.content.Context;
 import android.util.Log;
 import java.util.concurrent.TimeUnit;
-/**
- * Created by wada on 2014/09/09.
- */
+
 public class AsyncSleepLoader extends AbstractAsyncLoader<Object>{
 
     public AsyncSleepLoader(Context context){

@@ -23,9 +23,6 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-/**
- * Created by wada on 2014/09/07.
- */
 public class BasicNumberPickerDialogExample extends Example{
 
     private Context context;
@@ -37,7 +34,12 @@ public class BasicNumberPickerDialogExample extends Example{
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
-        NumberPickerDialogFragment dialogFragment = NumberPickerDialogFragment.newInstance(provider, 1, 1, 10);
+        NumberPickerDialogFragment dialogFragment = NumberPickerDialogFragment.newInstance(
+            provider,
+            1,
+            1,
+            10
+        );
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.dialog_title);
         dialogFragment.show(fragmentManager, label);

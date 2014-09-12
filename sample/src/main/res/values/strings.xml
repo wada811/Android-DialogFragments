@@ -18,8 +18,6 @@
 <resources>
 
     <string name="app_name">Android-DialogFragments</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
     <!-- activity -->
     <string name="title_activity_dialog_fragment_callback_provider">DialogFragmentCallbackProvider Test</string>

@@ -18,7 +18,6 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment.example
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
-
 public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends ActionBarActivity{
 
     @Override

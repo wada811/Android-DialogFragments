@@ -33,26 +33,21 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.ArrayList;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import at.wada811.android.dialogfragments.sample.Const;
-import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
-
 
 public class AlertDialogFragmentExamplesActivity extends ActionBarActivity
     implements DialogFragmentCallbackProvider{
 
     final AlertDialogFragmentExamplesActivity self = this;
-    private ArrayList<Example> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_alert_dialog_fragment_examples);
 
         boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
         getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_alert_dialog_fragment_examples_in_activity : R.string.title_activity_alert_dialog_fragment_examples_in_fragment);

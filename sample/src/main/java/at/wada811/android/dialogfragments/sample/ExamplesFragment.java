@@ -66,8 +66,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                AlertDialogFragmentExamplesActivity.class
+                getActivity(), AlertDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
@@ -79,8 +78,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                AlertDialogFragmentExamplesActivity.class
+                getActivity(), AlertDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
             items.add(
@@ -95,16 +93,14 @@ public class ExamplesFragment extends ListFragment{
                 new Examples(
                     getString(R.string.title_activity_progress_dialog_fragment_examples),
                     new Intent(
-                        getActivity(),
-                        ProgressDialogFragmentExamplesActivity.class
+                        getActivity(), ProgressDialogFragmentExamplesActivity.class
                     )
                 )
             );
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                DatePickerDialogFragmentExamplesActivity.class
+                getActivity(), DatePickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
@@ -116,8 +112,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                DatePickerDialogFragmentExamplesActivity.class
+                getActivity(), DatePickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
             items.add(
@@ -129,8 +124,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                TimePickerDialogFragmentExamplesActivity.class
+                getActivity(), TimePickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
@@ -142,8 +136,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                TimePickerDialogFragmentExamplesActivity.class
+                getActivity(), TimePickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
             items.add(
@@ -155,8 +148,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                NumberPickerDialogFragmentExamplesActivity.class
+                getActivity(), NumberPickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
@@ -168,8 +160,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                NumberPickerDialogFragmentExamplesActivity.class
+                getActivity(), NumberPickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
             items.add(
@@ -181,8 +172,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                StringPickerDialogFragmentExamplesActivity.class
+                getActivity(), StringPickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, true);
             items.add(
@@ -194,8 +184,7 @@ public class ExamplesFragment extends ListFragment{
         }
         {
             Intent intent = new Intent(
-                getActivity(),
-                StringPickerDialogFragmentExamplesActivity.class
+                getActivity(), StringPickerDialogFragmentExamplesActivity.class
             );
             intent.putExtra(Const.KEY_IS_IN_ACTIVITY, false);
             items.add(

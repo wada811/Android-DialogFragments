@@ -33,7 +33,6 @@ import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.dialogfragmentcallbackprovider.examples.DialogFragmentCallbackInActivityExample;
 import at.wada811.android.dialogfragments.sample.dialogfragmentcallbackprovider.examples.DialogFragmentCallbackInFragmentExample;
 
-
 public class DialogFragmentCallbackProviderFragment extends ListFragment
     implements DialogFragmentCallbackProvider{
 

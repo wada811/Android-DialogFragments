@@ -32,7 +32,6 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import at.wada811.android.dialogfragments.sample.R;
 
-
 public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFragment
     implements DialogFragmentCallbackProvider, LoaderCallbacks<Object>{
 

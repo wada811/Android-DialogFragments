@@ -25,9 +25,6 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-/**
- * Created by wada on 2014/09/07.
- */
 public class BasicTimePickerDialogExample extends Example{
 
     private Context context;
@@ -42,10 +39,7 @@ public class BasicTimePickerDialogExample extends Example{
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         TimePickerDialogFragment dialogFragment = TimePickerDialogFragment.newInstance(
-            provider,
-            calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE),
-            true
+            provider, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true
         );
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.dialog_title);
