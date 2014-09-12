@@ -30,8 +30,19 @@ Please try to move the [sample module](https://github.com/wada811/Android-Dialog
 ### StringPickerDialogFragment
     // TODO
 
-## Install
-    // TODO
+## Download
+
+Download as maven repository from GitHub via Gradle.
+
+```groovy
+repositories {
+    maven { url 'http://raw.github.com/wada811/Android-DialogFragments/master/repository/' }
+}
+
+dependencies {
+    compile 'at.wada811:android-dialog-fragments:1.0.0'
+}
+```
 
 ## Contribution
 1. Fork it
