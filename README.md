@@ -3,7 +3,7 @@ Android-DialogFragments
 
 Various DialogFragments for Android.
 
-## Description
+## DialogFragments
 
 - AlertDialogFragment
 - ProgressDialogFragment
@@ -15,24 +15,9 @@ Various DialogFragments for Android.
 ## Sample
 Please try to move the [sample module](https://github.com/wada811/Android-DialogFragments/tree/master/sample).
 
+## Dependency
 
-## Usage
-### AlertDialogFragment
-    // TODO
-### ProgressDialogFragment
-    // TODO
-### DatePickerDialogFragment
-    // TODO
-### TimePickerDialogFragment
-    // TODO
-### NumberPickerDialogFragment
-    // TODO
-### StringPickerDialogFragment
-    // TODO
-
-## Download
-
-Download as maven repository from GitHub via Gradle.
+Adding it as a dependency to your project's build.gradle.
 
 ```groovy
 repositories {
