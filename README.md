@@ -1,5 +1,6 @@
 Android-DialogFragments
 ====
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android--DialogFragments-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/983)
 
 Various DialogFragments for Android.
 
