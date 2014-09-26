@@ -107,7 +107,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
             ProgressDialogFragment dialogFragment = (ProgressDialogFragment)fragment;
-            dialogFragment.dismiss();
+            dialogFragment.dismissAllowingStateLoss();
         }
     }
 
@@ -121,7 +121,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
             ProgressDialogFragment dialogFragment = (ProgressDialogFragment)fragment;
-            dialogFragment.dismiss();
+            dialogFragment.dismissAllowingStateLoss();
         }
     }
 }
