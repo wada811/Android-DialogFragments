@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    compile 'at.wada811:android-dialog-fragments:1.0.0'
+    compile 'at.wada811:android-dialog-fragments:1.1.0'
 }
 ```
 
