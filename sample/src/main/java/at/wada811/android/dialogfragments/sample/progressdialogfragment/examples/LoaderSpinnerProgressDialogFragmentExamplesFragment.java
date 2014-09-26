@@ -113,7 +113,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
         Fragment fragment = getChildFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
             ProgressDialogFragment dialogFragment = (ProgressDialogFragment)fragment;
-            dialogFragment.dismiss();
+            dialogFragment.dismissAllowingStateLoss();
         }
     }
 
@@ -127,7 +127,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
         Fragment fragment = getChildFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
             ProgressDialogFragment dialogFragment = (ProgressDialogFragment)fragment;
-            dialogFragment.dismiss();
+            dialogFragment.dismissAllowingStateLoss();
         }
     }
 }
