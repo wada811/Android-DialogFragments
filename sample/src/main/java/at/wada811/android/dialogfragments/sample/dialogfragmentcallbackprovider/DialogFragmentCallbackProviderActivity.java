@@ -26,6 +26,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
+import at.wada811.android.dialogfragments.sample.R;
 
 public class DialogFragmentCallbackProviderActivity extends ActionBarActivity
     implements DialogFragmentCallbackProvider{
@@ -35,10 +36,11 @@ public class DialogFragmentCallbackProviderActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new DialogFragmentCallbackProviderFragment())
+                .replace(R.id.container, new DialogFragmentCallbackProviderFragment())
                 .commit();
         }
     }

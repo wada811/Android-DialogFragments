@@ -17,16 +17,18 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment.example
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import at.wada811.android.dialogfragments.sample.R;
 
 public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends ActionBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(
-                android.R.id.content,
+                R.id.container,
                 LoaderSpinnerProgressDialogFragmentExamplesFragment.newInstance()
             ).commit();
         }

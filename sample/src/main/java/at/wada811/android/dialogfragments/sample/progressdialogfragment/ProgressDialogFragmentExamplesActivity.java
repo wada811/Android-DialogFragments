@@ -18,16 +18,18 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import at.wada811.android.dialogfragments.sample.R;
 
 public class ProgressDialogFragmentExamplesActivity extends ActionBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(
-                android.R.id.content, ProgressDialogFragmentExamplesFragment.newInstance()
+                R.id.container, ProgressDialogFragmentExamplesFragment.newInstance()
             ).commit();
         }
     }
