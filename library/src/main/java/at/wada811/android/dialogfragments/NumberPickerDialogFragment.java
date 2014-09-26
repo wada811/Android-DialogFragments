@@ -15,7 +15,9 @@
  */
 package at.wada811.android.dialogfragments;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.NumberPicker;
@@ -24,6 +26,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class NumberPickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, NumberPickerDialogInterface,
                                                                                OnNumberSetListener{
 
