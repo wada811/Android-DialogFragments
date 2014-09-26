@@ -15,15 +15,18 @@
  */
 package at.wada811.android.dialogfragments;
 
+import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import java.util.List;
 import at.wada811.android.dialogfragments.StringPickerDialogInterface.OnStringSetListener;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
-import java.util.List;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class StringPickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, StringPickerDialogInterface,
                                                                                OnStringSetListener{
 

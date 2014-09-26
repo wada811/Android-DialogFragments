@@ -17,6 +17,7 @@
 package at.wada811.android.dialogfragments.sample;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
@@ -146,7 +147,7 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
             Intent intent = new Intent(
                 getActivity(), NumberPickerDialogFragmentExamplesActivity.class
             );
@@ -158,7 +159,7 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
             Intent intent = new Intent(
                 getActivity(), NumberPickerDialogFragmentExamplesActivity.class
             );
@@ -170,7 +171,7 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
             Intent intent = new Intent(
                 getActivity(), StringPickerDialogFragmentExamplesActivity.class
             );
@@ -182,7 +183,7 @@ public class ExamplesFragment extends ListFragment{
                 )
             );
         }
-        {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
             Intent intent = new Intent(
                 getActivity(), StringPickerDialogFragmentExamplesActivity.class
             );
