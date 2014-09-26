@@ -24,10 +24,11 @@ public class MainActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                .replace(android.R.id.content, ExamplesFragment.newInstance())
+                .replace(R.id.container, ExamplesFragment.newInstance())
                 .commit();
         }
     }

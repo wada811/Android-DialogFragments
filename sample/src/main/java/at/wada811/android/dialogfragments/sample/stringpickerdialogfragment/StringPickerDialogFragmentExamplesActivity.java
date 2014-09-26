@@ -36,12 +36,13 @@ public class StringPickerDialogFragmentExamplesActivity extends ActionBarActivit
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
 
         boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
         getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_string_picker_dialog_fragment_examples_in_activity : R.string.title_activity_string_picker_dialog_fragment_examples_in_fragment);
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(
-                android.R.id.content,
+                R.id.container,
                 StringPickerDialogFragmentExamplesFragment.newInstance(isInActivity)
             ).commit();
         }
