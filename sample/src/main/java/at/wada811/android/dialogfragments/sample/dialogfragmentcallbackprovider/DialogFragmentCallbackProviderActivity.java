@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallbac
 import at.wada811.android.dialogfragments.sample.R;
 
 public class DialogFragmentCallbackProviderActivity extends ActionBarActivity
-    implements DialogFragmentCallbackProvider{
+    implements DialogFragmentCallbackProvider {
 
     final DialogFragmentCallbackProviderActivity self = this;
 
@@ -45,10 +45,9 @@ public class DialogFragmentCallbackProviderActivity extends ActionBarActivity
         }
     }
 
-
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public View getView(DialogFragmentInterface dialog){
                 TextView titleView = new TextView(self);

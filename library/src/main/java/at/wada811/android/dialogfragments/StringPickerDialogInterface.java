@@ -17,23 +17,24 @@ package at.wada811.android.dialogfragments;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 interface StringPickerDialogInterface {
 
-    public StringPicker getStringPicker();
+    StringPicker getStringPicker();
 
-    public void setDisplayedValue(String value);
+    void setDisplayedValue(String value);
 
-    public String getDisplayedValue();
+    String getDisplayedValue();
 
-    public void setDisplayedValues(List<String> values);
+    void setDisplayedValues(List<String> values);
 
-    public void setDisplayedValues(String[] values);
+    void setDisplayedValues(String[] values);
 
     /**
      * The callback interface used to indicate the user is done filling in
      * the time (they clicked on the 'Set' button).
      */
-    public interface OnStringSetListener {
+    interface OnStringSetListener {
 
         /**
          * @param stringPicker The view associated with this listener.

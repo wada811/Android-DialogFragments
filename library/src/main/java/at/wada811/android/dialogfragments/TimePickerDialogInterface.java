@@ -18,19 +18,19 @@ package at.wada811.android.dialogfragments;
 import android.widget.TimePicker;
 
 interface TimePickerDialogInterface {
-    static final String HOUR = "hour";
-    static final String MINUTE = "minute";
-    static final String IS_24_HOUR = "is24hour";
 
-    public TimePicker getTimePicker();
+    String HOUR = "hour";
+    String MINUTE = "minute";
+    String IS_24_HOUR = "is24hour";
 
-    public void updateTime(int hour, int minute);
+    TimePicker getTimePicker();
+
+    void updateTime(int hour, int minute);
 
     /**
-     * The callback interface used to indicate the user is done filling in
-     * the time (they clicked on the 'Set' button).
+     * The callback interface used to indicate the user is done filling in the time (they clicked on the 'Set' button).
      */
-    public interface OnTimeSetListener {
+    interface OnTimeSetListener {
 
         /**
          * @param timePicker The view associated with this listener.

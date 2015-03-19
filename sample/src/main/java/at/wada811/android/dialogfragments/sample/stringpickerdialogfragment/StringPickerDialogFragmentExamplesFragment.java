@@ -33,8 +33,7 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.BasicStringPickerDialogExample;
 
-public class StringPickerDialogFragmentExamplesFragment extends ListFragment
-    implements DialogFragmentCallbackProvider{
+public class StringPickerDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
     private ArrayList<Example> items;
 
@@ -54,16 +53,12 @@ public class StringPickerDialogFragmentExamplesFragment extends ListFragment
     }
 
     private void initExample(){
-        items = new ArrayList<Example>();
-        items.add(new BasicStringPickerDialogExample(getActivity()));
+        items = new ArrayList<>();
+        items.add(new BasicStringPickerDialogExample());
     }
 
     private void initListFragment(){
-        setListAdapter(
-            new ArrayAdapter<Example>(
-                getActivity(), android.R.layout.simple_list_item_1, items
-            )
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override
@@ -76,7 +71,7 @@ public class StringPickerDialogFragmentExamplesFragment extends ListFragment
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onStringSet(DialogFragmentInterface dialog, StringPicker stringPicker, String value){
                 String text = "onStringSet[value: " + value + "]";

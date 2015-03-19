@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import java.util.List;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -30,12 +31,12 @@ class StringPickerDialog extends AlertDialog implements StringPickerDialogInterf
     private OnStringSetListener listener;
     private StringPicker stringPicker;
 
-    protected StringPickerDialog(Context context, OnStringSetListener listener, String[] values) {
+    protected StringPickerDialog(Context context, OnStringSetListener listener, String[] values){
         this(context, 0, listener, values);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    protected StringPickerDialog(Context context, int theme, OnStringSetListener listener, String[] values) {
+    protected StringPickerDialog(Context context, int theme, OnStringSetListener listener, String[] values){
         super(context, theme);
         this.listener = listener;
 
@@ -70,7 +71,7 @@ class StringPickerDialog extends AlertDialog implements StringPickerDialogInterf
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         String value = savedInstanceState.getString(VALUE);
         stringPicker.setDisplayedValue(value);

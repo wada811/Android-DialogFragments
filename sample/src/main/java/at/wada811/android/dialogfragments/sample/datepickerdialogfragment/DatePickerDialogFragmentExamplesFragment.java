@@ -33,8 +33,7 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples.BasicDatePickerDialogExample;
 
-public class DatePickerDialogFragmentExamplesFragment extends ListFragment
-    implements DialogFragmentCallbackProvider{
+public class DatePickerDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
     private ArrayList<Example> items;
 
@@ -54,16 +53,12 @@ public class DatePickerDialogFragmentExamplesFragment extends ListFragment
     }
 
     private void initExample(){
-        items = new ArrayList<Example>();
-        items.add(new BasicDatePickerDialogExample(getActivity()));
+        items = new ArrayList<>();
+        items.add(new BasicDatePickerDialogExample());
     }
 
     private void initListFragment(){
-        setListAdapter(
-            new ArrayAdapter<Example>(
-                getActivity(), android.R.layout.simple_list_item_1, items
-            )
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override
@@ -76,7 +71,7 @@ public class DatePickerDialogFragmentExamplesFragment extends ListFragment
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onDateSet(DialogFragmentInterface dialog, DatePicker datePicker, int year, int month, int day){
                 String text = "onDateSet[year: " + year + ", month: " + month + ", day: " + day + "]";

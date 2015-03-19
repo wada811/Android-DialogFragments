@@ -18,7 +18,7 @@ package at.wada811.android.dialogfragments.sample.progressdialogfragment.example
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-public abstract class AbstractAsyncLoader<D> extends AsyncTaskLoader<D>{
+public abstract class AbstractAsyncLoader<D> extends AsyncTaskLoader<D> {
 
     private D mData = null;
 

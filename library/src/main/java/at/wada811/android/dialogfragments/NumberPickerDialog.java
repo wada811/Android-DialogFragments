@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.NumberPicker;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -31,11 +32,11 @@ class NumberPickerDialog extends AlertDialog implements NumberPickerDialogInterf
     private NumberPicker numberPicker;
     private OnNumberSetListener listener;
 
-    public NumberPickerDialog(Context context, OnNumberSetListener listener, int value, int minValue, int maxValue) {
+    public NumberPickerDialog(Context context, OnNumberSetListener listener, int value, int minValue, int maxValue){
         this(context, 0, listener, value, minValue, maxValue);
     }
 
-    public NumberPickerDialog(Context context, int theme, OnNumberSetListener listener, int value, int minValue, int maxValue) {
+    public NumberPickerDialog(Context context, int theme, OnNumberSetListener listener, int value, int minValue, int maxValue){
         super(context, theme);
         this.listener = listener;
 
@@ -77,7 +78,7 @@ class NumberPickerDialog extends AlertDialog implements NumberPickerDialogInterf
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         int value = savedInstanceState.getInt(VALUE);
         numberPicker.setValue(value);

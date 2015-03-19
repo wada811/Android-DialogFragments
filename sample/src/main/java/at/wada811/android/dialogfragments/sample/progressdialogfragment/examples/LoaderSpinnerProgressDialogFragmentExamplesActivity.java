@@ -35,29 +35,25 @@ import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallbac
 import at.wada811.android.dialogfragments.sample.R;
 
 public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionBarActivity
-    implements OnItemClickListener, DialogFragmentCallbackProvider, LoaderCallbacks<Object>{
+    implements OnItemClickListener, DialogFragmentCallbackProvider, LoaderCallbacks<Object> {
 
+    private static final String TAG = LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName();
     private static final int LOADER_ID = 811;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        ArrayList<String> items = new ArrayList<String>();
+        ArrayList<String> items = new ArrayList<>();
         items.add("Start Loader");
         ListView listView = new ListView(this);
-        listView.setAdapter(
-            new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items)
-        );
+        listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items));
         listView.setOnItemClickListener(this);
         setContentView(listView);
 
         if(getSupportLoaderManager().getLoader(LOADER_ID) != null){
             getSupportLoaderManager().initLoader(LOADER_ID, null, this);
-            Log.i(
-                LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-                "re-init: " + LOADER_ID
-            );
+            Log.i(TAG, "re-init: " + LOADER_ID);
         }
     }
 
@@ -68,13 +64,10 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onCancel(DialogFragmentInterface dialog){
-                Log.i(
-                    LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-                    "DialogFragmentCallback#onCancel"
-                );
+                Log.i(TAG, "DialogFragmentCallback#onCancel");
                 getSupportLoaderManager().destroyLoader(LOADER_ID);
             }
         };
@@ -82,10 +75,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
 
     @Override
     public Loader<Object> onCreateLoader(int i, Bundle bundle){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-            "onCreateLoader"
-        );
+        Log.i(TAG, "onCreateLoader");
         ProgressDialogFragment dialogFragment = new ProgressDialogFragment();
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity);
@@ -99,10 +89,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
 
     @Override
     public void onLoadFinished(Loader<Object> loader, Object o){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-            "onLoadFinished"
-        );
+        Log.i(TAG, "onLoadFinished");
         getSupportLoaderManager().destroyLoader(loader.getId());
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
@@ -113,10 +100,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionB
 
     @Override
     public void onLoaderReset(Loader<Object> loader){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-            "onLoaderReset"
-        );
+        Log.i(TAG, "onLoaderReset");
         getSupportLoaderManager().destroyLoader(loader.getId());
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){

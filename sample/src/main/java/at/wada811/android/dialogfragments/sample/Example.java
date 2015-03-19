@@ -19,7 +19,7 @@ package at.wada811.android.dialogfragments.sample;
 import android.support.v4.app.FragmentManager;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 
-public abstract class Example{
+public abstract class Example {
 
     public String label;
 

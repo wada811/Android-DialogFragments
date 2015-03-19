@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 
-
 package at.wada811.android.dialogfragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.TimePicker;
 
 /**
  * A dialog that prompts the user for the time of day using a {@link android.widget.TimePicker}.
- *
- * <p>
- * See the <a href="{@docRoot}resources/tutorials/views/hello-timepicker.html">Time Picker
- * tutorial</a>.
- * </p>
+ * <p/>
+ * <p> See the <a href="{@docRoot}resources/tutorials/views/hello-timepicker.html">Time Picker tutorial</a>. </p>
  */
 class TimePickerDialog extends AlertDialog implements TimePickerDialogInterface, OnClickListener {
 
@@ -43,7 +40,7 @@ class TimePickerDialog extends AlertDialog implements TimePickerDialogInterface,
      * @param minute The initial minute.
      * @param is24HourView Whether this is a 24 hour view, or AM/PM.
      */
-    public TimePickerDialog(Context context, OnTimeSetListener listener, int hourOfDay, int minute, boolean is24HourView) {
+    public TimePickerDialog(Context context, OnTimeSetListener listener, int hourOfDay, int minute, boolean is24HourView){
         this(context, 0, listener, hourOfDay, minute, is24HourView);
     }
 
@@ -55,7 +52,7 @@ class TimePickerDialog extends AlertDialog implements TimePickerDialogInterface,
      * @param minute The initial minute.
      * @param is24HourView Whether this is a 24 hour view, or AM/PM.
      */
-    public TimePickerDialog(Context context, int theme, OnTimeSetListener listener, int hourOfDay, int minute, boolean is24HourView) {
+    public TimePickerDialog(Context context, int theme, OnTimeSetListener listener, int hourOfDay, int minute, boolean is24HourView){
         super(context, theme);
         this.listener = listener;
 
@@ -99,7 +96,7 @@ class TimePickerDialog extends AlertDialog implements TimePickerDialogInterface,
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         int hour = savedInstanceState.getInt(HOUR);
         int minute = savedInstanceState.getInt(MINUTE);

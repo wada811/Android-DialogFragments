@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package at.wada811.android.dialogfragments;
 
 import android.annotation.TargetApi;
@@ -22,17 +21,16 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.DatePicker;
 
 /**
  * A simple dialog containing an {@link android.widget.DatePicker}.
- *
- * <p>
- * See the <a href="{@docRoot}resources/tutorials/views/hello-datepicker.html">Date Picker
- * tutorial</a>.
- * </p>
+ * <p/>
+ * <p> See the <a href="{@docRoot}resources/tutorials/views/hello-datepicker.html">Date Picker tutorial</a>. </p>
  */
-class DatePickerDialog extends AlertDialog implements DatePickerDialogInterface, android.content.DialogInterface.OnClickListener {
+class DatePickerDialog extends AlertDialog
+    implements DatePickerDialogInterface, android.content.DialogInterface.OnClickListener {
 
     private final DatePicker datePicker;
     private final OnDateSetListener listener;
@@ -44,7 +42,7 @@ class DatePickerDialog extends AlertDialog implements DatePickerDialogInterface,
      * @param monthOfYear The initial month of the dialog.
      * @param dayOfMonth The initial day of the dialog.
      */
-    public DatePickerDialog(Context context, OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth) {
+    public DatePickerDialog(Context context, OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth){
         this(context, 0, listener, year, monthOfYear, dayOfMonth);
     }
 
@@ -56,7 +54,7 @@ class DatePickerDialog extends AlertDialog implements DatePickerDialogInterface,
      * @param monthOfYear The initial month of the dialog.
      * @param dayOfMonth The initial day of the dialog.
      */
-    public DatePickerDialog(Context context, int theme, OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth) {
+    public DatePickerDialog(Context context, int theme, OnDateSetListener listener, int year, int monthOfYear, int dayOfMonth){
         super(context, theme);
         this.listener = listener;
 
@@ -119,7 +117,7 @@ class DatePickerDialog extends AlertDialog implements DatePickerDialogInterface,
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState){
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         int year = savedInstanceState.getInt(YEAR);
         int month = savedInstanceState.getInt(MONTH);

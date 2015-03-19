@@ -17,6 +17,6 @@ package at.wada811.android.dialogfragments.interfaces;
 
 public interface DialogFragmentCallbackProvider {
 
-    public DialogFragmentCallback getDialogFragmentCallback();
+    DialogFragmentCallback getDialogFragmentCallback();
 
 }

@@ -16,7 +16,6 @@
 
 package at.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples;
 
-import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import java.util.Calendar;
 import java.util.Date;
@@ -25,22 +24,19 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class BasicTimePickerDialogExample extends Example{
+public class BasicTimePickerDialogExample extends Example {
 
-    private Context context;
-
-    public BasicTimePickerDialogExample(Context context){
+    public BasicTimePickerDialogExample(){
         super(BasicTimePickerDialogExample.class.getSimpleName());
-        this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
-        TimePickerDialogFragment dialogFragment = TimePickerDialogFragment.newInstance(
-            provider, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true
-        );
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        TimePickerDialogFragment dialogFragment = TimePickerDialogFragment.newInstance(provider, hour, minute, true);
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.dialog_title);
         dialogFragment.show(fragmentManager, label);

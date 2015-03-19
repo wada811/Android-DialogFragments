@@ -23,18 +23,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.util.Log;
-import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import java.lang.ref.WeakReference;
 import java.text.NumberFormat;
+import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
+import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
 public class ProgressDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, ProgressDialogInterface {
 
-    final ProgressDialogFragment self = this;
     public static final String TAG = ProgressDialogFragment.class.getSimpleName();
 
     private static final String PROGRESS_STYLE = "progressStyle";
-    private static final String IS_INDETERMINATE = "isInterminate";
+    private static final String IS_INDETERMINATE = "isIndeterminate";
     private static final String MAX = "max";
     private static final String PROGRESS_VALUE = "progress";
     private static final String SECONDARY_PROGRESS_VALUE = "secondaryProgress";
@@ -63,7 +64,7 @@ public class ProgressDialogFragment extends AlertDialogFragment implements Dialo
         final WeakReference<ProgressDialogFragment> ref;
 
         protected ProgressDialogUpdateHandler(ProgressDialogFragment dialog) {
-            ref = new WeakReference<ProgressDialogFragment>(dialog);
+            ref = new WeakReference<>(dialog);
         }
 
         @Override
@@ -87,17 +88,25 @@ public class ProgressDialogFragment extends AlertDialogFragment implements Dialo
         }
     }
 
-    public ProgressDialogFragment() {
-        Log.w(TAG, "ProgressDialogFragment");
+    public static ProgressDialogFragment newInstance(DialogFragmentCallbackProvider provider){
+        return newInstanceInternal(provider, VALUE_NULL);
     }
 
     /**
-     * @param theme {@link THEME_TRADITIONAL}, {@link THEME_HOLO_LIGHT}, {@link THEME_HOLO_DARK},
-     *        {@link THEME_DEVICE_DEFAULT_LIGHT}, {@link THEME_DEVICE_DEFAULT_DARK}
+     * @param theme {@link #THEME_TRADITIONAL}, {@link #THEME_HOLO_LIGHT}, {@link #THEME_HOLO_DARK},
+     *        {@link #THEME_DEVICE_DEFAULT_LIGHT}, {@link #THEME_DEVICE_DEFAULT_DARK}
      */
-    public ProgressDialogFragment(int theme) {
-        Log.w(TAG, "ProgressDialogFragment");
-        this.theme = theme;
+    public static ProgressDialogFragment newInstance(DialogFragmentCallbackProvider provider, int theme){
+        return newInstanceInternal(provider, theme);
+    }
+
+    private static ProgressDialogFragment newInstanceInternal(DialogFragmentCallbackProvider provider, int theme){
+        assertListenerBindable(provider);
+        ProgressDialogFragment fragment = new ProgressDialogFragment();
+        Bundle args = new Bundle();
+        args.putInt(THEME, theme);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -118,6 +127,7 @@ public class ProgressDialogFragment extends AlertDialogFragment implements Dialo
         handler = new ProgressDialogUpdateHandler(this);
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         Log.w(TAG, "onCreateDialog");

@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.TypedValue;
@@ -33,6 +34,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
+@SuppressWarnings("unused")
 @SuppressLint("InlinedApi")
 public class AlertDialogFragment extends AbstractDialogFragment implements DialogFragmentInterface {
 
@@ -40,32 +42,32 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
     public static final String TAG = AlertDialogFragment.class.getSimpleName();
 
     /**
-     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use
-     * the traditional (pre-Holo) alert dialog theme.
+     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use the
+     * traditional (pre-Holo) alert dialog theme.
      */
     public static final int THEME_TRADITIONAL = AlertDialog.THEME_TRADITIONAL;
 
     /**
-     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use
-     * the holographic alert theme with a dark background.
+     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use the
+     * holographic alert theme with a dark background.
      */
     public static final int THEME_HOLO_DARK = AlertDialog.THEME_HOLO_DARK;
 
     /**
-     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use
-     * the holographic alert theme with a light background.
+     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use the
+     * holographic alert theme with a light background.
      */
     public static final int THEME_HOLO_LIGHT = AlertDialog.THEME_HOLO_LIGHT;
 
     /**
-     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use
-     * the device's default alert theme with a dark background.
+     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use the
+     * device's default alert theme with a dark background.
      */
     public static final int THEME_DEVICE_DEFAULT_DARK = AlertDialog.THEME_DEVICE_DEFAULT_DARK;
 
     /**
-     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use
-     * the device's default alert theme with a dark background.
+     * Special theme constant for {@link AlertDialogFragment.Builder#Builder(android.content.Context, int)}: use the
+     * device's default alert theme with a dark background.
      */
     public static final int THEME_DEVICE_DEFAULT_LIGHT = AlertDialog.THEME_DEVICE_DEFAULT_LIGHT;
 
@@ -103,34 +105,29 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         private Bundle extra;
 
         /**
-         * Constructor using a context for this builder and the {@link AlertDialogFragment} it
-         * creates.
+         * Constructor using a context for this builder and the {@link AlertDialogFragment} it creates.
          */
-        public Builder(Context context) {
+        public Builder(Context context){
             this(context, 0);
         }
 
         /**
-         * Constructor using a context and theme for this builder and
-         * the {@link AlertDialogFragment} it creates. The actual theme
-         * that an AlertDialog uses is a private implementation, however you can
-         * here supply either the name of an attribute in the theme from which
-         * to get the dialog's style (such as {@link android.R.attr#alertDialogTheme} or one of the
-         * constants {@link AlertDialogFragment#THEME_TRADITIONAL},
-         * {@link AlertDialogFragment#THEME_HOLO_DARK},
-         * or {@link AlertDialogFragment#THEME_HOLO_LIGHT}.
+         * Constructor using a context and theme for this builder and the {@link AlertDialogFragment} it creates. The
+         * actual theme that an AlertDialog uses is a private implementation, however you can here supply either the
+         * name of an attribute in the theme from which to get the dialog's style (such as {@link
+         * android.R.attr#alertDialogTheme} or one of the constants {@link AlertDialogFragment#THEME_TRADITIONAL},
+         * {@link AlertDialogFragment#THEME_HOLO_DARK}, or {@link AlertDialogFragment#THEME_HOLO_LIGHT}.
          */
-        public Builder(Context context, int theme) {
+        public Builder(Context context, int theme){
             this.context = context.getApplicationContext();
             args.putInt(THEME, theme);
         }
 
         /**
-         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder.
-         * It does not {@link AlertDialogFragment#show} the dialog.
-         * This allows the user to do any extra processing before displaying the dialog.
-         * Use {@link #show} if you don't have any other processing
-         * to do and want this to be created and displayed.
+         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder. It does not {@link
+         * AlertDialogFragment#show} the dialog. This allows the user to do any extra processing before displaying the
+         * dialog. Use {@link #show} if you don't have any other processing to do and want this to be created and
+         * displayed.
          */
         public AlertDialogFragment create(){
             final AlertDialogFragment fragment = new AlertDialogFragment();
@@ -153,16 +150,16 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder and
-         * {@link AlertDialogFragment#show}'s the dialog.
+         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder and {@link
+         * AlertDialogFragment#show}'s the dialog.
          */
         public void show(FragmentManager manager, String tag){
             create().show(manager, tag);
         }
 
         /**
-         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder and
-         * {@link AlertDialogFragment#show}'s the dialog.
+         * Creates a {@link AlertDialogFragment} with the arguments supplied to this builder and {@link
+         * AlertDialogFragment#show}'s the dialog.
          */
         public void show(FragmentTransaction transaction, String tag){
             create().show(transaction, tag);
@@ -170,7 +167,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Sets whether the dialog is cancelable or not. Default is true.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setCancelable(boolean cancelable){
@@ -179,9 +176,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Sets whether this dialog is canceled when touched outside the window's bounds.
-         * If setting to true, the dialog is set to be cancelable if not already set.
-         * 
+         * Sets whether this dialog is canceled when touched outside the window's bounds. If setting to true, the dialog
+         * is set to be cancelable if not already set.
+         *
          * @param cancel Whether the dialog should be canceled when touched outside the window.
          */
         public Builder setCanceledOnTouchOutside(boolean cancel){
@@ -190,10 +187,10 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Sets the Dialog to use the inverse background, regardless of what the
-         * contents is.
-         * 
+         * Sets the Dialog to use the inverse background, regardless of what the contents is.
+         *
          * @param useInverseBackground Whether to use the inverse background
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setInverseBackgroundForced(boolean useInverseBackground){
@@ -202,9 +199,8 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set the resource id of the {@link android.graphics.drawable.Drawable} to be used in the
-         * title.
-         * 
+         * Set the resource id of the {@link android.graphics.drawable.Drawable} to be used in the title.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setIcon(int iconId){
@@ -214,7 +210,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set an icon as supplied by a theme attribute. e.g. android.R.attr.alertDialogIcon
-         * 
+         *
          * @param attrId ID of a theme attribute that points to a drawable resource.
          */
         public Builder setIconAttribute(int attrId){
@@ -226,8 +222,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Sets an extra object.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
+         *
          * @see AlertDialogFragment#setExtra(android.os.Bundle)
          */
         public Builder setExtra(Bundle extra){
@@ -237,7 +234,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set the title displayed in the {@link android.app.Dialog}.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setTitle(CharSequence title){
@@ -247,7 +244,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set the title using the given resource id.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setTitle(int resId){
@@ -263,7 +260,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set the message to display.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setMessage(CharSequence message){
@@ -273,7 +270,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set the message to display using the given resource id.
-         * 
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setMessage(int resId){
@@ -287,9 +284,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content,
-         * you will be notified of the selected item via the supplied listener.
-         * 
+         * Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item
+         * via the supplied listener.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setItems(CharSequence[] items){
@@ -298,10 +295,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content,
-         * you will be notified of the selected item via the supplied listener.
-         * This should be an array type i.e. R.array.foo
-         * 
+         * Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item
+         * via the supplied listener. This should be an array type i.e. R.array.foo
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setItems(int itemsId){
@@ -309,12 +305,12 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items, which are supplied by the given {@link android.widget.ListAdapter}, to be
-         * displayed in the dialog as the content,
-         * you will be notified of the selected item via the supplied listener.
-         * 
-         * @param povider The {@link DialogFragmentCallback#getAdapter(DialogFragmentInterface)} to
-         *        supply the list of items
+         * Set a list of items, which are supplied by the given {@link android.widget.ListAdapter}, to be displayed in
+         * the dialog as the content, you will be notified of the selected item via the supplied listener.
+         *
+         * @param povider The {@link DialogFragmentCallback#getAdapter(DialogFragmentInterface)} to supply the list of
+         * items
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setAdapter(DialogFragmentCallbackProvider povider){
@@ -324,13 +320,13 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content.
-         * The list will have a check mark displayed to the right of the text for the checked item.
-         * Clicking on an item in the list will not dismiss the dialog.
+         * Set a list of items to be displayed in the dialog as the content. The list will have a check mark displayed
+         * to the right of the text for the checked item. Clicking on an item in the list will not dismiss the dialog.
          * Clicking on a button will dismiss the dialog.
-         * 
+         *
          * @param items the items to be displayed.
          * @param checkedItem specifies which item is checked. If -1 no items are checked.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem){
@@ -340,14 +336,13 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content.
-         * This should be an array type i.e. R.array.foo
-         * The list will have a check mark displayed to the right of the text for the checked item.
-         * Clicking on an item in the list will not dismiss the dialog.
-         * Clicking on a button will dismiss the dialog.
-         * 
+         * Set a list of items to be displayed in the dialog as the content. This should be an array type i.e.
+         * R.array.foo The list will have a check mark displayed to the right of the text for the checked item. Clicking
+         * on an item in the list will not dismiss the dialog. Clicking on a button will dismiss the dialog.
+         *
          * @param itemsId the resource id of an array i.e. R.array.foo
          * @param checkedItem specifies which item is checked. If -1 no items are checked.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setSingleChoiceItems(int itemsId, int checkedItem){
@@ -355,15 +350,14 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content.
-         * The list will have a check mark displayed to the right of the text
-         * for each checked item. Clicking on an item in the list will not
-         * dismiss the dialog. Clicking on a button will dismiss the dialog.
-         * 
+         * Set a list of items to be displayed in the dialog as the content. The list will have a check mark displayed
+         * to the right of the text for each checked item. Clicking on an item in the list will not dismiss the dialog.
+         * Clicking on a button will dismiss the dialog.
+         *
          * @param items the text of the items to be displayed in the list.
-         * @param checkedItems specifies which items are checked. It should be null in which case no
-         *        items are checked. If non null it must be exactly the same length as the array of
-         *        items.
+         * @param checkedItems specifies which items are checked. It should be null in which case no items are checked.
+         * If non null it must be exactly the same length as the array of items.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems){
@@ -373,17 +367,15 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items to be displayed in the dialog as the content,
-         * you will be notified of the selected item via the supplied listener.
-         * This should be an array type, e.g. R.array.foo. The list will have
-         * a check mark displayed to the right of the text for each checked
-         * item. Clicking on an item in the list will not dismiss the dialog.
-         * Clicking on a button will dismiss the dialog.
-         * 
+         * Set a list of items to be displayed in the dialog as the content, you will be notified of the selected item
+         * via the supplied listener. This should be an array type, e.g. R.array.foo. The list will have a check mark
+         * displayed to the right of the text for each checked item. Clicking on an item in the list will not dismiss
+         * the dialog. Clicking on a button will dismiss the dialog.
+         *
          * @param itemsId the resource id of an array i.e. R.array.foo
-         * @param checkedItems specifies which items are checked. It should be null in which case no
-         *        items are checked. If non null it must be exactly the same length as the array of
-         *        items.
+         * @param checkedItems specifies which items are checked. It should be null in which case no items are checked.
+         * If non null it must be exactly the same length as the array of items.
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems){
@@ -392,8 +384,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the positive button of the dialog is pressed.
-         * 
+         *
          * @param text The text to display in the positive button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setPositiveButton(CharSequence text, DialogFragmentCallbackProvider provider){
@@ -407,8 +400,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the positive button of the dialog is pressed.
-         * 
+         *
          * @param textId The resource id of the text to display in the positive button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setPositiveButton(int textId, DialogFragmentCallbackProvider provider){
@@ -417,8 +411,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the neutral button of the dialog is pressed.
-         * 
+         *
          * @param text The text to display in the neutral button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setNeutralButton(CharSequence text, DialogFragmentCallbackProvider provider){
@@ -432,8 +427,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the neutral button of the dialog is pressed.
-         * 
+         *
          * @param textId The resource id of the text to display in the neutral button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setNeutralButton(int textId, DialogFragmentCallbackProvider provider){
@@ -442,8 +438,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the negative button of the dialog is pressed.
-         * 
+         *
          * @param text The text to display in the negative button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setNegativeButton(CharSequence text, DialogFragmentCallbackProvider provider){
@@ -457,8 +454,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the negative button of the dialog is pressed.
-         * 
+         *
          * @param textId The resource id of the text to display in the negative button
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setNegativeButton(int textId, DialogFragmentCallbackProvider provider){
@@ -467,8 +465,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Sets a listener to be invoked when the dialog is shown.
-         * 
+         *
          * @param provider
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setOnShowListener(DialogFragmentCallbackProvider provider){
@@ -478,20 +477,17 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Sets the callback that will be called if the dialog is canceled.
+         * Sets the callback that will be called if the dialog is canceled. <p/> <p> Even in a cancelable dialog, the
+         * dialog may be dismissed for reasons other than being canceled or one of the supplied choices being selected.
+         * If you are interested in listening for all cases where the dialog is dismissed and not just when it is
+         * canceled, see {@link #setOnDismissListener}. </p>
          *
-         * <p>
-         * Even in a cancelable dialog, the dialog may be dismissed for reasons other than being
-         * canceled or one of the supplied choices being selected. If you are interested in
-         * listening for all cases where the dialog is dismissed and not just when it is canceled,
-         * see {@link #setOnDismissListener}.
-         * </p>
-         * 
+         * @param provider
+         *
+         * @return This Builder object to allow for chaining of calls to set methods
+         *
          * @see #setCancelable(boolean)
          * @see #setOnDismissListener
-         * 
-         * @param provider
-         * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setOnCancelListener(DialogFragmentCallbackProvider provider){
             assertListenerBindable(provider);
@@ -501,8 +497,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the dialog is dismissed.
-         * 
+         *
          * @param provider
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setOnDismissListener(DialogFragmentCallbackProvider provider){
@@ -513,8 +510,9 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
         /**
          * Set a listener to be invoked when the key is pressed.
-         * 
+         *
          * @param provider
+         *
          * @return This Builder object to allow for chaining of calls to set methods
          */
         public Builder setOnKeyListener(DialogFragmentCallbackProvider provider){
@@ -528,7 +526,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
     boolean isFromBuilder;
 
-    public AlertDialogFragment() {
+    public AlertDialogFragment(){
 
     }
 
@@ -541,6 +539,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         isFromBuilder = savedInstanceState.getBoolean(IS_FROM_BUILDER);
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         if(!isFromBuilder){
@@ -653,7 +652,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(items == null){
             return;
         }
-        builder.setItems(items, new OnClickListener(){
+        builder.setItems(items, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 bindItemClickListener(which);
@@ -675,7 +674,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(adapter == null){
             throw new NullPointerException("DialogEventListener#getListAdapter returns null.");
         }
-        builder.setAdapter(adapter, new OnClickListener(){
+        builder.setAdapter(adapter, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 bindItemClickListener(which);
@@ -690,7 +689,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(items == null){
             return;
         }
-        builder.setSingleChoiceItems(items, checkedItem, new OnClickListener(){
+        builder.setSingleChoiceItems(items, checkedItem, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 bindSingleChoiceClickListener(which);
@@ -708,7 +707,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         if(items.length != checked.length){
             throw new IllegalArgumentException("Item's length is not same as checkedItem's length.");
         }
-        builder.setMultiChoiceItems(items, checked, new DialogInterface.OnMultiChoiceClickListener(){
+        builder.setMultiChoiceItems(items, checked, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked){
                 bindMultiChoiceClickListener(which, isChecked);
@@ -723,7 +722,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
             return;
         }
         final boolean useOnPositiveClickListener = args.getBoolean(POSITIVE_CLICK_LISTENER);
-        builder.setPositiveButton(positiveButtonText, new OnClickListener(){
+        builder.setPositiveButton(positiveButtonText, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 if(useOnPositiveClickListener){
@@ -740,7 +739,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
             return;
         }
         final boolean useOnNeutralClickListener = args.getBoolean(NEUTRAL_CLICK_LISTENER);
-        builder.setNeutralButton(naturalButtonText, new OnClickListener(){
+        builder.setNeutralButton(naturalButtonText, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 if(useOnNeutralClickListener){
@@ -757,7 +756,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
             return;
         }
         final boolean useOnNegativeClickListener = args.getBoolean(NEGATIVE_CLICK_LISTENER);
-        builder.setNegativeButton(negativeButtonText, new OnClickListener(){
+        builder.setNegativeButton(negativeButtonText, new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which){
                 if(useOnNegativeClickListener){

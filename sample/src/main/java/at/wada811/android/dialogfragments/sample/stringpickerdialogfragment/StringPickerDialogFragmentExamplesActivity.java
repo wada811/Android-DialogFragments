@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.R;
 
 public class StringPickerDialogFragmentExamplesActivity extends ActionBarActivity
-    implements DialogFragmentCallbackProvider{
+    implements DialogFragmentCallbackProvider {
 
     final StringPickerDialogFragmentExamplesActivity self = this;
 
@@ -41,17 +41,15 @@ public class StringPickerDialogFragmentExamplesActivity extends ActionBarActivit
         boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
         getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_string_picker_dialog_fragment_examples_in_activity : R.string.title_activity_string_picker_dialog_fragment_examples_in_fragment);
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(
-                R.id.container,
-                StringPickerDialogFragmentExamplesFragment.newInstance(isInActivity)
-            ).commit();
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, StringPickerDialogFragmentExamplesFragment.newInstance(isInActivity))
+                .commit();
         }
     }
 
-
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onStringSet(DialogFragmentInterface dialog, StringPicker stringPicker, String value){
                 String text = "onStringSet[value: " + value + "]";

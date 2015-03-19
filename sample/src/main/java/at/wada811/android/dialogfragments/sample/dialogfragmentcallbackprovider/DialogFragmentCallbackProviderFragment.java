@@ -33,11 +33,9 @@ import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.dialogfragmentcallbackprovider.examples.DialogFragmentCallbackInActivityExample;
 import at.wada811.android.dialogfragments.sample.dialogfragmentcallbackprovider.examples.DialogFragmentCallbackInFragmentExample;
 
-public class DialogFragmentCallbackProviderFragment extends ListFragment
-    implements DialogFragmentCallbackProvider{
+public class DialogFragmentCallbackProviderFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
     private ArrayList<Example> items;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -48,17 +46,13 @@ public class DialogFragmentCallbackProviderFragment extends ListFragment
     }
 
     private void initExample(){
-        items = new ArrayList<Example>();
+        items = new ArrayList<>();
         items.add(new DialogFragmentCallbackInActivityExample(getActivity()));
         items.add(new DialogFragmentCallbackInFragmentExample(getActivity()));
     }
 
     private void initListFragment(){
-        setListAdapter(
-            new ArrayAdapter<Example>(
-                getActivity(), android.R.layout.simple_list_item_1, items
-            )
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override
@@ -74,7 +68,7 @@ public class DialogFragmentCallbackProviderFragment extends ListFragment
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public View getView(DialogFragmentInterface dialog){
                 TextView titleView = new TextView(getActivity());

@@ -28,7 +28,7 @@ import at.wada811.android.dialogfragments.sample.R;
 import at.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity;
 import at.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity;
 
-public class ProgressDialogFragmentExamplesFragment extends ListFragment{
+public class ProgressDialogFragmentExamplesFragment extends ListFragment {
 
     private ArrayList<Examples> items;
 
@@ -47,34 +47,22 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment{
     }
 
     private void initExample(){
-        items = new ArrayList<Examples>();
-        items.add(
-            new Examples(
-                getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity),
-                new Intent(
-                    getActivity(), LoaderSpinnerProgressDialogFragmentExamplesActivity.class
-                )
-            )
-        );
+        items = new ArrayList<>();
         {
-            items.add(
-                new Examples(
-                    getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment),
-                    new Intent(
-                        getActivity(),
-                        LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
-                    )
-                )
-            );
+            Intent intent = new Intent(getActivity(), LoaderSpinnerProgressDialogFragmentExamplesActivity.class);
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity);
+            items.add(new Examples(label, intent));
+        }
+        {
+            Intent intent = new Intent(getActivity(),
+                LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class);
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment);
+            items.add(new Examples(label, intent));
         }
     }
 
     private void initListFragment(){
-        setListAdapter(
-            new ArrayAdapter<Examples>(
-                getActivity(), android.R.layout.simple_list_item_1, items
-            )
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override

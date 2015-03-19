@@ -19,6 +19,7 @@ import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import java.util.List;
 import at.wada811.android.dialogfragments.StringPickerDialogInterface.OnStringSetListener;
@@ -27,8 +28,8 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class StringPickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, StringPickerDialogInterface,
-                                                                               OnStringSetListener{
+public class StringPickerDialogFragment extends AlertDialogFragment
+    implements DialogFragmentInterface, StringPickerDialogInterface, OnStringSetListener {
 
     private static final String VALUES = "values";
     private StringPickerDialog stringPickerDialog;
@@ -53,6 +54,7 @@ public class StringPickerDialogFragment extends AlertDialogFragment implements D
         return fragment;
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Bundle args = getArguments();

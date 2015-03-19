@@ -18,7 +18,7 @@ package at.wada811.android.dialogfragments.sample;
 
 import android.content.Intent;
 
-public class Examples{
+public class Examples {
 
     public String label;
     public Intent intent;

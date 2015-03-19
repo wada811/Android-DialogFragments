@@ -19,6 +19,7 @@ import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.NumberPicker;
 import at.wada811.android.dialogfragments.NumberPickerDialogInterface.OnNumberSetListener;
@@ -27,8 +28,8 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class NumberPickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, NumberPickerDialogInterface,
-                                                                               OnNumberSetListener{
+public class NumberPickerDialogFragment extends AlertDialogFragment
+    implements DialogFragmentInterface, NumberPickerDialogInterface, OnNumberSetListener {
 
     private NumberPickerDialog numberPickerDialog;
 
@@ -60,6 +61,7 @@ public class NumberPickerDialogFragment extends AlertDialogFragment implements D
         Log.w(TAG, "onCreate:savedInstanceState: " + savedInstanceState);
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Bundle args = getArguments();

@@ -22,20 +22,20 @@ import android.support.v4.app.FragmentTransaction;
 
 public interface DialogFragmentInterface {
 
-    public String getTag();
+    String getTag();
 
-    public void show(FragmentManager manager, String tag);
+    void show(FragmentManager manager, String tag);
 
-    public int show(FragmentTransaction transaction, String tag);
+    int show(FragmentTransaction transaction, String tag);
 
-    public void dismiss();
+    void dismiss();
 
-    public void dismissAllowingStateLoss();
+    void dismissAllowingStateLoss();
 
-    public Dialog getDialog();
+    Dialog getDialog();
 
-    public DialogFragmentInterface setExtra(Bundle extra);
+    DialogFragmentInterface setExtra(Bundle extra);
 
-    public Bundle getExtra();
+    Bundle getExtra();
 
 }

@@ -23,6 +23,7 @@ import android.content.DialogInterface.OnDismissListener;
 import android.content.DialogInterface.OnKeyListener;
 import android.content.DialogInterface.OnShowListener;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -34,7 +35,12 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
+@SuppressWarnings("unused")
 abstract class AbstractDialogFragment extends DialogFragment implements DialogFragmentInterface {
+
+    protected static final String ICON_ID = "iconId";
+    protected static final String TITLE = "title";
+    protected static final String TITLE_ID = "titleId";
 
     /**
      * Value for {@code null} or not set.
@@ -49,9 +55,6 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
      */
     static final int VALUE_FALSE = 2;
 
-    protected static final String ICON_ID = "iconId";
-    protected static final String TITLE = "title";
-    protected static final String TITLE_ID = "titleId";
     private static final String CANCELED_TOUCH_OUTSIDE = "isCanceledOnTouchOutside";
     private static final String SHOW_LISTENER = "setOnShowListener";
     private static final String CANCEL_LISTENER = "setOnCancelListener";
@@ -90,6 +93,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
         }
     }
 
+    @NonNull
     @Override
     public abstract Dialog onCreateDialog(Bundle savedInstanceState);
 
@@ -205,9 +209,13 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
         }
     }
 
+    public boolean isCanceledOnTouchOutside(){
+        return isCanceledOnTouchOutside == VALUE_TRUE;
+    }
+
     /**
-     * Sets whether this dialog is canceled when touched outside the window's bounds.
-     * If setting to true, the dialog is set to be cancelable if not already set.
+     * Sets whether this dialog is canceled when touched outside the window's bounds. If setting to true, the dialog is
+     * set to be cancelable if not already set.
      *
      * @param cancel Whether the dialog should be canceled when touched outside the window.
      */
@@ -216,10 +224,6 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
         if(getDialog() != null){
             getDialog().setCanceledOnTouchOutside(isCanceledOnTouchOutside == VALUE_TRUE);
         }
-    }
-
-    public boolean isCanceledOnTouchOutside(){
-        return isCanceledOnTouchOutside == VALUE_TRUE;
     }
 
     /**
@@ -236,19 +240,15 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
     }
 
     /**
-     * Sets the callback that will be called if the dialog is canceled.
+     * Sets the callback that will be called if the dialog is canceled. <p/> <p> Even in a cancelable dialog, the dialog
+     * may be dismissed for reasons other than being canceled or one of the supplied choices being selected. If you are
+     * interested in listening for all cases where the dialog is dismissed and not just when it is canceled, see {@link
+     * #setOnDismissListener}. </p>
      *
-     * <p>
-     * Even in a cancelable dialog, the dialog may be dismissed for reasons other than being
-     * canceled or one of the supplied choices being selected. If you are interested in listening
-     * for all cases where the dialog is dismissed and not just when it is canceled, see
-     * {@link #setOnDismissListener}.
-     * </p>
+     * @param provider
      *
      * @see #setCancelable(boolean)
      * @see #setOnDismissListener
-     *
-     * @param provider
      */
     public void setOnCancelListener(DialogFragmentCallbackProvider provider){
         assertListenerBindable(provider);
@@ -286,7 +286,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     protected void setOnShowListener(Dialog dialog){
         useOnShowListener = true;
-        dialog.setOnShowListener(new OnShowListener(){
+        dialog.setOnShowListener(new OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog){
                 bindShowListener();
@@ -296,7 +296,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     protected void setOnCancelListener(Dialog dialog){
         useOnCancelListener = true;
-        dialog.setOnCancelListener(new OnCancelListener(){
+        dialog.setOnCancelListener(new OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog){
                 bindCancelListener();
@@ -306,7 +306,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     protected void setOnDismissListener(Dialog dialog){
         useOnDismissListener = true;
-        dialog.setOnDismissListener(new OnDismissListener(){
+        dialog.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog){
                 bindDismissListener();
@@ -316,7 +316,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     protected void setOnKeyListener(Dialog dialog){
         useOnKeyListener = true;
-        dialog.setOnKeyListener(new OnKeyListener(){
+        dialog.setOnKeyListener(new OnKeyListener() {
             @Override
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event){
                 return bindKeyListener(keyCode, event);
@@ -346,6 +346,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
         }
     }
 
+    @SuppressWarnings("SimplifiableIfStatement")
     protected boolean bindKeyListener(int keyCode, KeyEvent event){
         DialogFragmentCallback listener = getDialogFragmentCallback();
         if(listener != null){
@@ -362,6 +363,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
     //   |____/|_|\__,_|_|\___/ \__, |___|_| |_|\__\___|_|  |_|  \__,_|\___\___|
     //                          |___/
     //============================================================
+
     /**
      * Set an extra object. This has no effect to dialog behavior.
      */
@@ -379,6 +381,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
         return extra;
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     static void assertListenerBindable(DialogFragmentCallbackProvider provider){
         if(provider == null){
             throw new IllegalArgumentException(DialogFragmentCallbackProvider.class.getSimpleName() + " must not be null.");

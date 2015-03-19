@@ -19,7 +19,7 @@ import android.content.Context;
 import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
-public class AsyncSleepLoader extends AbstractAsyncLoader<Object>{
+public class AsyncSleepLoader extends AbstractAsyncLoader<Object> {
 
     public AsyncSleepLoader(Context context){
         super(context);

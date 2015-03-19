@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.R;
 
 public class DatePickerDialogFragmentExamplesActivity extends ActionBarActivity
-    implements DialogFragmentCallbackProvider{
+    implements DialogFragmentCallbackProvider {
 
     final DatePickerDialogFragmentExamplesActivity self = this;
 
@@ -41,17 +41,15 @@ public class DatePickerDialogFragmentExamplesActivity extends ActionBarActivity
         boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
         getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_date_picker_dialog_fragment_examples_in_activity : R.string.title_activity_date_picker_dialog_fragment_examples_in_fragment);
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(
-                R.id.container,
-                DatePickerDialogFragmentExamplesFragment.newInstance(isInActivity)
-            ).commit();
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, DatePickerDialogFragmentExamplesFragment.newInstance(isInActivity))
+                .commit();
         }
     }
 
-
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onDateSet(DialogFragmentInterface dialog, DatePicker datePicker, int year, int month, int day){
                 String text = "onDateSet[year: " + year + ", month: " + month + ", day: " + day + "]";

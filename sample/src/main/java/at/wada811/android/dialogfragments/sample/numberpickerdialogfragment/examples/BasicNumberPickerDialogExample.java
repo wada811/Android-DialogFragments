@@ -16,30 +16,24 @@
 
 package at.wada811.android.dialogfragments.sample.numberpickerdialogfragment.examples;
 
-import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import at.wada811.android.dialogfragments.NumberPickerDialogFragment;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class BasicNumberPickerDialogExample extends Example{
+public class BasicNumberPickerDialogExample extends Example {
 
-    private Context context;
-
-    public BasicNumberPickerDialogExample(Context context){
+    public BasicNumberPickerDialogExample(){
         super(BasicNumberPickerDialogExample.class.getSimpleName());
-        this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
-        NumberPickerDialogFragment dialogFragment = NumberPickerDialogFragment.newInstance(
-            provider,
-            1,
-            1,
-            10
-        );
+        int value = 1;
+        int min = 1;
+        int max = 10;
+        NumberPickerDialogFragment dialogFragment = NumberPickerDialogFragment.newInstance(provider, value, min, max);
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.dialog_title);
         dialogFragment.show(fragmentManager, label);

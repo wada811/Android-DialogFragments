@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.sample.Const;
 import at.wada811.android.dialogfragments.sample.R;
 
 public class NumberPickerDialogFragmentExamplesActivity extends ActionBarActivity
-    implements DialogFragmentCallbackProvider{
+    implements DialogFragmentCallbackProvider {
 
     final NumberPickerDialogFragmentExamplesActivity self = this;
 
@@ -41,17 +41,15 @@ public class NumberPickerDialogFragmentExamplesActivity extends ActionBarActivit
         boolean isInActivity = getIntent().getBooleanExtra(Const.KEY_IS_IN_ACTIVITY, true);
         getSupportActionBar().setTitle(isInActivity ? R.string.title_activity_number_picker_dialog_fragment_examples_in_activity : R.string.title_activity_number_picker_dialog_fragment_examples_in_fragment);
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(
-                R.id.container,
-                NumberPickerDialogFragmentExamplesFragment.newInstance(isInActivity)
-            ).commit();
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, NumberPickerDialogFragmentExamplesFragment.newInstance(isInActivity))
+                .commit();
         }
     }
 
-
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onNumberSet(DialogFragmentInterface dialog, NumberPicker numberPicker, int value){
                 String text = "onTimeSet[value: " + value + "]";

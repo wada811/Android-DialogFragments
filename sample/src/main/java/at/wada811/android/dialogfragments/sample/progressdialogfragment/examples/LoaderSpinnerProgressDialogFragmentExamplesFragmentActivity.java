@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends ActionBarActivity{
+public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -27,10 +27,9 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity extends
         setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(
-                R.id.container,
-                LoaderSpinnerProgressDialogFragmentExamplesFragment.newInstance()
-            ).commit();
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, LoaderSpinnerProgressDialogFragmentExamplesFragment.newInstance())
+                .commit();
         }
     }
 

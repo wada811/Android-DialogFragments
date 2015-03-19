@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class ItemsAlertDialogExample extends Example{
+public class ItemsAlertDialogExample extends Example {
 
     private Context context;
 
@@ -40,7 +40,7 @@ public class ItemsAlertDialogExample extends Example{
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
-        String[] items = new String[]{
+        String[] items = {
             AlertDialog.class.getSimpleName(),
             CharacterPickerDialog.class.getSimpleName(),
             ProgressDialog.class.getSimpleName(),

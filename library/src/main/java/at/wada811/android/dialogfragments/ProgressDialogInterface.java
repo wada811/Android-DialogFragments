@@ -24,71 +24,68 @@ import java.text.NumberFormat;
 interface ProgressDialogInterface {
 
     /**
-     * Creates a ProgressDialog with a circular, spinning progress
-     * bar. This is the default.
+     * Creates a ProgressDialog with a circular, spinning progress bar. This is the default.
      */
-    public static final int STYLE_SPINNER = ProgressDialog.STYLE_SPINNER;
+    int STYLE_SPINNER = ProgressDialog.STYLE_SPINNER;
 
     /**
      * Creates a ProgressDialog with a horizontal progress bar.
      */
-    public static final int STYLE_HORIZONTAL = ProgressDialog.STYLE_HORIZONTAL;
+    int STYLE_HORIZONTAL = ProgressDialog.STYLE_HORIZONTAL;
 
-    public Dialog getDialog();
+    Dialog getDialog();
 
-    public void setProgressStyle(int style);
+    void setProgressStyle(int style);
 
-    public void setIcon(int iconId);
+    void setIcon(int iconId);
 
-    public void setTitle(CharSequence message);
+    void setTitle(CharSequence message);
 
-    public void setTitle(int resId);
+    void setTitle(int resId);
 
-    public void setMessage(CharSequence message);
+    void setMessage(CharSequence message);
 
-    public void setIndeterminate(boolean indeterminate);
+    void setIndeterminate(boolean indeterminate);
 
-    public boolean isIndeterminate();
+    boolean isIndeterminate();
 
-    public void setIndeterminateDrawable(Drawable d);
+    void setIndeterminateDrawable(Drawable d);
 
-    public void setMax(int max);
+    void setMax(int max);
 
-    public int getMax();
+    int getMax();
 
-    public void setProgress(int value);
+    void setProgress(int value);
 
-    public int getProgress();
+    int getProgress();
 
-    public void setSecondaryProgress(int secondaryProgress);
+    void setSecondaryProgress(int secondaryProgress);
 
-    public int getSecondaryProgress();
+    int getSecondaryProgress();
 
-    public void incrementProgressBy(int diff);
+    void incrementProgressBy(int diff);
 
-    public void incrementSecondaryProgressBy(int diff);
+    void incrementSecondaryProgressBy(int diff);
 
-    public void setProgressDrawable(Drawable d);
+    void setProgressDrawable(Drawable d);
 
     /**
-     * Change the format of the small text showing current and maximum units
-     * of progress. The default is "%1d/%2d".
+     * Change the format of the small text showing current and maximum units of progress. The default is "%1d/%2d".
      * Should not be called during the number is progressing.
-     * 
-     * @param format A string passed to {@link String#format String.format()};
-     *        use "%1d" for the current number and "%2d" for the maximum. If null,
-     *        nothing will be shown.
+     *
+     * @param format A string passed to {@link String#format String.format()}; use "%1d" for the current number and
+     * "%2d" for the maximum. If null, nothing will be shown.
      */
-    public void setProgressNumberFormat(String format);
+    void setProgressNumberFormat(String format);
 
     /**
-     * Change the format of the small text showing the percentage of progress.
-     * The default is {@link java.text.NumberFormat#getPercentInstance()
-     * NumberFormat.getPercentageInstnace().} Should not be called during the number is progressing.
-     * 
-     * @param format An instance of a {@link java.text.NumberFormat} to generate the
-     *        percentage text. If null, nothing will be shown.
+     * Change the format of the small text showing the percentage of progress. The default is {@link
+     * java.text.NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().} Should not be called during
+     * the number is progressing.
+     *
+     * @param format An instance of a {@link java.text.NumberFormat} to generate the percentage text. If null, nothing
+     * will be shown.
      */
-    public void setProgressPercentFormat(NumberFormat format);
+    void setProgressPercentFormat(NumberFormat format);
 
 }

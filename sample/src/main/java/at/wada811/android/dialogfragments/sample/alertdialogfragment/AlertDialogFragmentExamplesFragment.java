@@ -50,8 +50,7 @@ import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.It
 import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.MultiChoiceAlertDialogExample;
 import at.wada811.android.dialogfragments.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
 
-public class AlertDialogFragmentExamplesFragment extends ListFragment
-    implements DialogFragmentCallbackProvider{
+public class AlertDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
     private ArrayList<Example> items;
 
@@ -71,7 +70,7 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
     }
 
     private void initExample(){
-        items = new ArrayList<Example>();
+        items = new ArrayList<>();
         items.add(new BasicAlertDialogExample(getActivity()));
         items.add(new EventAlertDialogExample(getActivity()));
         items.add(new ItemsAlertDialogExample(getActivity()));
@@ -82,11 +81,7 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
     }
 
     private void initListFragment(){
-        setListAdapter(
-            new ArrayAdapter<Example>(
-                getActivity(), android.R.layout.simple_list_item_1, items
-            )
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override
@@ -99,7 +94,7 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onShow(DialogFragmentInterface dialog){
                 String text = "onShow";
@@ -171,9 +166,7 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment
                 Bundle extra = new Bundle();
                 extra.putStringArray("items", items);
                 dialog.setExtra(extra);
-                return new ArrayAdapter<String>(
-                    getActivity(), android.R.layout.simple_list_item_1, items
-                );
+                return new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
             }
 
             @Override

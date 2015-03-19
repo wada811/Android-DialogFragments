@@ -25,15 +25,15 @@ import java.util.List;
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class StringPicker extends NumberPicker {
 
-    public StringPicker(Context context) {
+    public StringPicker(Context context){
         super(context);
     }
 
-    public StringPicker(Context context, AttributeSet attrs) {
+    public StringPicker(Context context, AttributeSet attrs){
         super(context, attrs);
     }
 
-    public StringPicker(Context context, AttributeSet attrs, int defStyle) {
+    public StringPicker(Context context, AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
     }
 

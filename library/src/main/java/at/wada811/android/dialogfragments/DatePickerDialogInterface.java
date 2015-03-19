@@ -19,24 +19,23 @@ import android.widget.DatePicker;
 
 interface DatePickerDialogInterface {
 
-    static final String YEAR = "year";
-    static final String MONTH = "month";
-    static final String DAY = "day";
+    String YEAR = "year";
+    String MONTH = "month";
+    String DAY = "day";
 
-    public DatePicker getDatePicker();
+    DatePicker getDatePicker();
 
-    public void updateDate(int year, int monthOfYear, int day);
+    void updateDate(int year, int monthOfYear, int day);
 
     /**
      * The callback used to indicate the user is done filling in the date.
      */
-    public interface OnDateSetListener {
+    interface OnDateSetListener {
 
         /**
          * @param view The view associated with this listener.
          * @param year The year that was set.
-         * @param month The month that was set (0-11) for compatibility
-         *        with {@link java.util.Calendar}.
+         * @param month The month that was set (0-11) for compatibility with {@link java.util.Calendar}.
          * @param day The day of the month that was set.
          */
         void onDateSet(DatePicker view, int year, int month, int day);

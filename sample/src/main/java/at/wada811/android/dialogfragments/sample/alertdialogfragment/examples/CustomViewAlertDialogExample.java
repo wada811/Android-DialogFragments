@@ -23,7 +23,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class CustomViewAlertDialogExample extends Example{
+public class CustomViewAlertDialogExample extends Example {
 
     private Context context;
 

@@ -23,7 +23,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class DialogFragmentCallbackInActivityExample extends Example{
+public class DialogFragmentCallbackInActivityExample extends Example {
 
     private Context context;
 
@@ -38,9 +38,7 @@ public class DialogFragmentCallbackInActivityExample extends Example{
             .setView(provider)
             .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
-            .show(
-                fragmentManager, DialogFragmentCallbackInActivityExample.class.getSimpleName()
-            );
+            .show(fragmentManager, DialogFragmentCallbackInActivityExample.class.getSimpleName());
     }
 
 }

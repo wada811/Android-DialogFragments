@@ -19,19 +19,18 @@ import android.widget.NumberPicker;
 
 public interface NumberPickerDialogInterface {
 
-    static final String VALUE = "value";
-    static final String MIN_VALUE = "minValue";
-    static final String MAX_VALUE = "maxValue";
+    String VALUE = "value";
+    String MIN_VALUE = "minValue";
+    String MAX_VALUE = "maxValue";
 
-    public NumberPicker getNumberPicker();
+    NumberPicker getNumberPicker();
 
-    public void updateNumber(int value);
+    void updateNumber(int value);
 
     /**
-     * The callback interface used to indicate the user is done filling in
-     * the time (they clicked on the 'Set' button).
+     * The callback interface used to indicate the user is done filling in the time (they clicked on the 'Set' button).
      */
-    public interface OnNumberSetListener {
+    interface OnNumberSetListener {
 
         /**
          * @param numberPicker The view associated with this listener.

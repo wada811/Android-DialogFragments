@@ -21,24 +21,17 @@ import android.app.ProgressDialog;
 import android.content.Context;
 
 /**
- * <p>
- * A dialog showing a progress indicator and an optional text message or view. Only a text message
- * or a view can be used at the same time.
- * </p>
- * <p>
- * The dialog can be made cancelable on back key press.
- * </p>
- * <p>
- * The progress range is 0..10000.
- * </p>
+ * <p> A dialog showing a progress indicator and an optional text message or view. Only a text message or a view can be
+ * used at the same time. </p> <p> The dialog can be made cancelable on back key press. </p> <p> The progress range is
+ * 0..10000. </p>
  */
 class ProgressDialogHoneyComb extends ProgressDialog implements ProgressDialogInterface {
 
-    public ProgressDialogHoneyComb(Context context) {
+    public ProgressDialogHoneyComb(Context context){
         super(context);
     }
 
-    public ProgressDialogHoneyComb(Context context, int theme) {
+    public ProgressDialogHoneyComb(Context context, int theme){
         super(context, theme);
     }
 

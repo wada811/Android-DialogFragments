@@ -17,6 +17,7 @@ package at.wada811.android.dialogfragments;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.TimePicker;
 import at.wada811.android.dialogfragments.TimePickerDialogInterface.OnTimeSetListener;
@@ -24,8 +25,8 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
-public class TimePickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, TimePickerDialogInterface,
-                                                                             OnTimeSetListener{
+public class TimePickerDialogFragment extends AlertDialogFragment
+    implements DialogFragmentInterface, TimePickerDialogInterface, OnTimeSetListener {
 
     private TimePickerDialog timePickerDialog;
 
@@ -49,6 +50,7 @@ public class TimePickerDialogFragment extends AlertDialogFragment implements Dia
         return fragment;
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Bundle args = getArguments();

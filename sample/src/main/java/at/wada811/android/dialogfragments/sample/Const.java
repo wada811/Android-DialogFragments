@@ -16,7 +16,7 @@
 
 package at.wada811.android.dialogfragments.sample;
 
-public class Const{
+public class Const {
 
     public static final String KEY_IS_IN_ACTIVITY = "isInActivity";
 

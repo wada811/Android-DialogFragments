@@ -20,7 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class ProgressDialogFragmentExamplesActivity extends ActionBarActivity{
+public class ProgressDialogFragmentExamplesActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,9 +28,9 @@ public class ProgressDialogFragmentExamplesActivity extends ActionBarActivity{
         setContentView(R.layout.activity);
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(
-                R.id.container, ProgressDialogFragmentExamplesFragment.newInstance()
-            ).commit();
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, ProgressDialogFragmentExamplesFragment.newInstance())
+                .commit();
         }
     }
 

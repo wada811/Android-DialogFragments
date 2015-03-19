@@ -29,7 +29,7 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class MultiChoiceAlertDialogExample extends Example{
+public class MultiChoiceAlertDialogExample extends Example {
 
     private Context context;
 
@@ -47,7 +47,7 @@ public class MultiChoiceAlertDialogExample extends Example{
             DatePickerDialog.class.getSimpleName(),
             TimePickerDialog.class.getSimpleName(),
         };
-        boolean[] checkedItems = new boolean[]{
+        boolean[] checkedItems = {
             true,
             false,
             true,

@@ -20,7 +20,6 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.text.method.CharacterPickerDialog;
 import at.wada811.android.dialogfragments.StringPickerDialogFragment;
@@ -28,26 +27,22 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvi
 import at.wada811.android.dialogfragments.sample.Example;
 import at.wada811.android.dialogfragments.sample.R;
 
-public class BasicStringPickerDialogExample extends Example{
+public class BasicStringPickerDialogExample extends Example {
 
-    private Context context;
-
-    public BasicStringPickerDialogExample(Context context){
+    public BasicStringPickerDialogExample(){
         super(BasicStringPickerDialogExample.class.getSimpleName());
-        this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
-        StringPickerDialogFragment dialogFragment = StringPickerDialogFragment.newInstance(
-            provider, new String[]{
-                AlertDialog.class.getSimpleName(),
-                CharacterPickerDialog.class.getSimpleName(),
-                ProgressDialog.class.getSimpleName(),
-                DatePickerDialog.class.getSimpleName(),
-                TimePickerDialog.class.getSimpleName(),
-            }
-        );
+        String[] values = {
+            AlertDialog.class.getSimpleName(),
+            CharacterPickerDialog.class.getSimpleName(),
+            ProgressDialog.class.getSimpleName(),
+            DatePickerDialog.class.getSimpleName(),
+            TimePickerDialog.class.getSimpleName(),
+        };
+        StringPickerDialogFragment dialogFragment = StringPickerDialogFragment.newInstance(provider, values);
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.dialog_title);
         dialogFragment.show(fragmentManager, label);

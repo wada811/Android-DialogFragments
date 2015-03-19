@@ -33,8 +33,9 @@ import at.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallbac
 import at.wada811.android.dialogfragments.sample.R;
 
 public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFragment
-    implements DialogFragmentCallbackProvider, LoaderCallbacks<Object>{
+    implements DialogFragmentCallbackProvider, LoaderCallbacks<Object> {
 
+    private static final String TAG = LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName();
     private static final int LOADER_ID = 811;
 
     public static LoaderSpinnerProgressDialogFragmentExamplesFragment newInstance(){
@@ -48,11 +49,9 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        ArrayList<String> items = new ArrayList<String>();
+        ArrayList<String> items = new ArrayList<>();
         items.add("Start Loader");
-        setListAdapter(
-            new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items)
-        );
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items));
     }
 
     @Override
@@ -60,10 +59,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
         super.onActivityCreated(savedInstanceState);
         if(getLoaderManager().getLoader(LOADER_ID) != null){
             getLoaderManager().initLoader(LOADER_ID, null, this);
-            Log.i(
-                LoaderSpinnerProgressDialogFragmentExamplesActivity.class.getSimpleName(),
-                "re-init: " + LOADER_ID
-            );
+            Log.i(TAG, "re-init: " + LOADER_ID);
         }
     }
 
@@ -75,13 +71,10 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
 
     @Override
     public DialogFragmentCallback getDialogFragmentCallback(){
-        return new SimpleDialogFragmentCallback(){
+        return new SimpleDialogFragmentCallback() {
             @Override
             public void onCancel(DialogFragmentInterface dialog){
-                Log.i(
-                    LoaderSpinnerProgressDialogFragmentExamplesFragment.class.getSimpleName(),
-                    "DialogFragmentCallback#onCancel"
-                );
+                Log.i(TAG, "DialogFragmentCallback#onCancel");
                 getLoaderManager().destroyLoader(LOADER_ID);
             }
         };
@@ -89,10 +82,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
 
     @Override
     public Loader<Object> onCreateLoader(int i, Bundle bundle){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesFragment.class.getSimpleName(),
-            "onCreateLoader"
-        );
+        Log.i(TAG, "onCreateLoader");
         ProgressDialogFragment dialogFragment = new ProgressDialogFragment();
         dialogFragment.setIcon(R.drawable.ic_launcher);
         dialogFragment.setTitle(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment);
@@ -105,10 +95,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
 
     @Override
     public void onLoadFinished(Loader<Object> objectLoader, Object o){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesFragment.class.getSimpleName(),
-            "onLoadFinished"
-        );
+        Log.i(TAG, "onLoadFinished");
         getLoaderManager().destroyLoader(objectLoader.getId());
         Fragment fragment = getChildFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){
@@ -119,10 +106,7 @@ public class LoaderSpinnerProgressDialogFragmentExamplesFragment extends ListFra
 
     @Override
     public void onLoaderReset(Loader<Object> objectLoader){
-        Log.i(
-            LoaderSpinnerProgressDialogFragmentExamplesFragment.class.getSimpleName(),
-            "onLoaderReset"
-        );
+        Log.i(TAG, "onLoaderReset");
         getLoaderManager().destroyLoader(objectLoader.getId());
         Fragment fragment = getChildFragmentManager().findFragmentByTag(ProgressDialogFragment.TAG);
         if(fragment != null){

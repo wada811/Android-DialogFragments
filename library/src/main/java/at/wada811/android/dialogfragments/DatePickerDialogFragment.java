@@ -17,6 +17,7 @@ package at.wada811.android.dialogfragments;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.DatePicker;
 import at.wada811.android.dialogfragments.DatePickerDialogInterface.OnDateSetListener;
@@ -24,8 +25,8 @@ import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import at.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 
-public class DatePickerDialogFragment extends AlertDialogFragment implements DialogFragmentInterface, DatePickerDialogInterface,
-                                                                             OnDateSetListener{
+public class DatePickerDialogFragment extends AlertDialogFragment
+    implements DialogFragmentInterface, DatePickerDialogInterface, OnDateSetListener {
 
     private DatePickerDialog datePickerDialog;
 
@@ -49,6 +50,7 @@ public class DatePickerDialogFragment extends AlertDialogFragment implements Dia
         return fragment;
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Bundle args = getArguments();
@@ -93,7 +95,7 @@ public class DatePickerDialogFragment extends AlertDialogFragment implements Dia
 
     /**
      * Sets the current date.
-     * 
+     *
      * @param year The date year.
      * @param monthOfYear The date month.
      * @param dayOfMonth The date day of month.
