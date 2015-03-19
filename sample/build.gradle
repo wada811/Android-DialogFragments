@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId "at.wada811.android.dialogfragments.example"
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
