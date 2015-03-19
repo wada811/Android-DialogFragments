@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package at.wada811.android;
+package com.wada811.android;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

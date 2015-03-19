@@ -13,23 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.wada811.android.dialogfragments.interfaces;
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+public interface DialogFragmentCallbackProvider {
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+    DialogFragmentCallback getDialogFragmentCallback();
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
 }

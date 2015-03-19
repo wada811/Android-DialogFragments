@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.wada811.android.dialogfragments.sample;
 
-buildscript {
-    repositories {
-        jcenter()
+import android.support.v4.app.FragmentManager;
+import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
+
+public abstract class Example {
+
+    public String label;
+
+    public Example(String label){
+        this.label = label;
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
+    public abstract void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager);
 
-allprojects {
-    repositories {
-        jcenter()
+    @Override
+    public String toString(){
+        return label;
     }
 }

@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.wada811.android.dialogfragments.sample;
 
-buildscript {
-    repositories {
-        jcenter()
+import android.content.Intent;
+
+public class Examples {
+
+    public String label;
+    public Intent intent;
+
+    public Examples(String label, Intent intent){
+        this.label = label;
+        this.intent = intent;
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
+    @Override
+    public String toString(){
+        return label;
     }
 }

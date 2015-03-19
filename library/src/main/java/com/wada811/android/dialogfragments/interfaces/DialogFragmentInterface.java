@@ -13,23 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.wada811.android.dialogfragments.interfaces;
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import android.app.Dialog;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+public interface DialogFragmentInterface {
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
+    String getTag();
 
-allprojects {
-    repositories {
-        jcenter()
-    }
+    void show(FragmentManager manager, String tag);
+
+    int show(FragmentTransaction transaction, String tag);
+
+    void dismiss();
+
+    void dismissAllowingStateLoss();
+
+    Dialog getDialog();
+
+    DialogFragmentInterface setExtra(Bundle extra);
+
+    Bundle getExtra();
+
 }

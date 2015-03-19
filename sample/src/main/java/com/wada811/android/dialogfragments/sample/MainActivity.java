@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.wada811.android.dialogfragments.sample;
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
+public class MainActivity extends ActionBarActivity {
 
-allprojects {
-    repositories {
-        jcenter()
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
+
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, ExamplesFragment.newInstance())
+                .commit();
+        }
     }
+
 }
