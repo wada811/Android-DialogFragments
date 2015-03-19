@@ -13,17 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.wada811.android.dialogfragments.interfaces;
 
-package com.wada811.android;
+import android.app.Dialog;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+public interface DialogFragmentInterface {
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
-    }
+    String getTag();
+
+    void show(FragmentManager manager, String tag);
+
+    int show(FragmentTransaction transaction, String tag);
+
+    void dismiss();
+
+    void dismissAllowingStateLoss();
+
+    Dialog getDialog();
+
+    DialogFragmentInterface setExtra(Bundle extra);
+
+    Bundle getExtra();
+
 }

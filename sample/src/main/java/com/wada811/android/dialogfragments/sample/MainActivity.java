@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package com.wada811.android;
+package com.wada811.android.dialogfragments.sample;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
+public class MainActivity extends ActionBarActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity);
+
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, ExamplesFragment.newInstance())
+                .commit();
+        }
     }
+
 }

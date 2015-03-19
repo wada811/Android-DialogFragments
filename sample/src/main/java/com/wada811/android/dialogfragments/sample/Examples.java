@@ -14,16 +14,22 @@
  * limitations under the License.
  */
 
-package com.wada811.android;
+package com.wada811.android.dialogfragments.sample;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+import android.content.Intent;
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
+public class Examples {
+
+    public String label;
+    public Intent intent;
+
+    public Examples(String label, Intent intent){
+        this.label = label;
+        this.intent = intent;
+    }
+
+    @Override
+    public String toString(){
+        return label;
     }
 }

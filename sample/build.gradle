@@ -21,7 +21,7 @@ android {
     buildToolsVersion "22.0.0"
 
     defaultConfig {
-        applicationId "at.wada811.android.dialogfragments.example"
+        applicationId "com.wada811.android.dialogfragments.example"
         minSdkVersion 8
         targetSdkVersion 22
         versionCode 1
@@ -29,7 +29,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,6 +37,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':library')
     compile 'com.android.support:appcompat-v7:22.0.0'
+    compile project(':library')
 }

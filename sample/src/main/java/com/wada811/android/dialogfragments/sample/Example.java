@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package com.wada811.android;
+package com.wada811.android.dialogfragments.sample;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+import android.support.v4.app.FragmentManager;
+import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
+public abstract class Example {
+
+    public String label;
+
+    public Example(String label){
+        this.label = label;
+    }
+
+    public abstract void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager);
+
+    @Override
+    public String toString(){
+        return label;
     }
 }

@@ -14,16 +14,10 @@
  * limitations under the License.
  */
 
-package com.wada811.android;
+package com.wada811.android.dialogfragments.sample;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+public class Const {
 
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
-public class ApplicationTest extends ApplicationTestCase<Application> {
-    public ApplicationTest() {
-        super(Application.class);
-    }
+    public static final String KEY_IS_IN_ACTIVITY = "isInActivity";
+
 }
