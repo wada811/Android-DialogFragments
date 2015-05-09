@@ -23,7 +23,6 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import java.util.ArrayList;
 import com.wada811.android.dialogfragments.sample.alertdialogfragment.AlertDialogFragmentExamplesActivity;
 import com.wada811.android.dialogfragments.sample.datepickerdialogfragment.DatePickerDialogFragmentExamplesActivity;
 import com.wada811.android.dialogfragments.sample.dialogfragmentcallbackprovider.DialogFragmentCallbackProviderActivity;
@@ -31,6 +30,7 @@ import com.wada811.android.dialogfragments.sample.numberpickerdialogfragment.Num
 import com.wada811.android.dialogfragments.sample.progressdialogfragment.ProgressDialogFragmentExamplesActivity;
 import com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.StringPickerDialogFragmentExamplesActivity;
 import com.wada811.android.dialogfragments.sample.timepickerdialogfragment.TimePickerDialogFragmentExamplesActivity;
+import java.util.ArrayList;
 
 public class ExamplesFragment extends ListFragment {
 

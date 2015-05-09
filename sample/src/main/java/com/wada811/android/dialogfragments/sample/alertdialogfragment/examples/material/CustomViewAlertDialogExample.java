@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material;
 
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
-import com.wada811.android.dialogfragments.AlertDialogFragment;
+import com.wada811.android.dialogfragments.material.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
@@ -28,7 +28,7 @@ public class CustomViewAlertDialogExample extends Example {
     private Context context;
 
     public CustomViewAlertDialogExample(Context context){
-        super(CustomViewAlertDialogExample.class.getSimpleName());
+        super(CustomViewAlertDialogExample.class.getSimpleName() + "(Material)");
         this.context = context;
     }
 

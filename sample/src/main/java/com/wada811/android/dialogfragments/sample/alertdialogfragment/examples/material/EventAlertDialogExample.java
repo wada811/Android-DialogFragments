@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material;
 
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
-import com.wada811.android.dialogfragments.AlertDialogFragment;
+import com.wada811.android.dialogfragments.material.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
 
-public class BasicAlertDialogExample extends Example {
+public class EventAlertDialogExample extends Example {
 
     private Context context;
 
-    public BasicAlertDialogExample(Context context){
-        super(BasicAlertDialogExample.class.getSimpleName());
+    public EventAlertDialogExample(Context context){
+        super(EventAlertDialogExample.class.getSimpleName() + "(Material)");
         this.context = context;
     }
 
@@ -37,8 +37,13 @@ public class BasicAlertDialogExample extends Example {
         new AlertDialogFragment.Builder(context).setIcon(R.drawable.ic_launcher)
             .setTitle(R.string.dialog_title)
             .setMessage(R.string.dialog_message)
-            .setPositiveButton(R.string.dialog_ok, null)
-            .setNegativeButton(R.string.dialog_cancel, null)
+            .setPositiveButton(R.string.dialog_yes, provider)
+            .setNegativeButton(R.string.dialog_no, provider)
+            .setNeutralButton(R.string.dialog_cancel, provider)
+            .setOnShowListener(provider)
+            .setOnCancelListener(provider)
+            .setOnDismissListener(provider)
+            .setOnKeyListener(provider)
             .show(fragmentManager, label);
     }
 

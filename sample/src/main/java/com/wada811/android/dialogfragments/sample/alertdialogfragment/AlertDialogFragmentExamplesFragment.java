@@ -34,7 +34,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.ArrayList;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
@@ -42,13 +41,7 @@ import com.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallba
 import com.wada811.android.dialogfragments.sample.Const;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.AdapterAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.BasicAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.CustomViewAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.EventAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.ItemsAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.MultiChoiceAlertDialogExample;
-import com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.SingleChoiceAlertDialogExample;
+import java.util.ArrayList;
 
 public class AlertDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
@@ -71,13 +64,20 @@ public class AlertDialogFragmentExamplesFragment extends ListFragment implements
 
     private void initExample(){
         items = new ArrayList<>();
-        items.add(new BasicAlertDialogExample(getActivity()));
-        items.add(new EventAlertDialogExample(getActivity()));
-        items.add(new ItemsAlertDialogExample(getActivity()));
-        items.add(new AdapterAlertDialogExample(getActivity()));
-        items.add(new SingleChoiceAlertDialogExample(getActivity()));
-        items.add(new MultiChoiceAlertDialogExample(getActivity()));
-        items.add(new CustomViewAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.BasicAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.BasicAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.EventAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.EventAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.ItemsAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.ItemsAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.AdapterAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.AdapterAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.SingleChoiceAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.SingleChoiceAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.MultiChoiceAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.MultiChoiceAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional.CustomViewAlertDialogExample(getActivity()));
+        items.add(new com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material.CustomViewAlertDialogExample(getActivity()));
     }
 
     private void initListFragment(){

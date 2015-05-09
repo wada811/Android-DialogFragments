@@ -14,29 +14,53 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.text.method.CharacterPickerDialog;
 import com.wada811.android.dialogfragments.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
 
-public class AdapterAlertDialogExample extends Example {
+public class MultiChoiceAlertDialogExample extends Example {
 
     private Context context;
 
-    public AdapterAlertDialogExample(Context context){
-        super(AdapterAlertDialogExample.class.getSimpleName());
+    public MultiChoiceAlertDialogExample(Context context){
+        super(MultiChoiceAlertDialogExample.class.getSimpleName() + "(Traditional)");
         this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
+        String[] items = new String[]{
+            AlertDialog.class.getSimpleName(),
+            CharacterPickerDialog.class.getSimpleName(),
+            ProgressDialog.class.getSimpleName(),
+            DatePickerDialog.class.getSimpleName(),
+            TimePickerDialog.class.getSimpleName(),
+        };
+        boolean[] checkedItems = {
+            true,
+            false,
+            true,
+            false,
+            true
+        };
+        Bundle extra = new Bundle();
+        extra.putStringArray("items", items);
         new AlertDialogFragment.Builder(context).setIcon(R.drawable.ic_launcher)
             .setTitle(R.string.dialog_title)
-            .setAdapter(provider)
+            .setMultiChoiceItems(items, checkedItems)
+            .setExtra(extra)
+            .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
             .show(fragmentManager, label);
     }

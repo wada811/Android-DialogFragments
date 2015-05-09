@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -29,12 +29,12 @@ import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProv
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
 
-public class SingleChoiceAlertDialogExample extends Example {
+public class ItemsAlertDialogExample extends Example {
 
     private Context context;
 
-    public SingleChoiceAlertDialogExample(Context context){
-        super(SingleChoiceAlertDialogExample.class.getSimpleName());
+    public ItemsAlertDialogExample(Context context){
+        super(ItemsAlertDialogExample.class.getSimpleName() + "(Traditional)");
         this.context = context;
     }
 
@@ -51,9 +51,8 @@ public class SingleChoiceAlertDialogExample extends Example {
         extra.putStringArray("items", items);
         new AlertDialogFragment.Builder(context).setIcon(R.drawable.ic_launcher)
             .setTitle(R.string.dialog_title)
-            .setSingleChoiceItems(items, 3)
+            .setItems(items)
             .setExtra(extra)
-            .setPositiveButton(R.string.dialog_ok, null)
             .setNegativeButton(R.string.dialog_cancel, null)
             .show(fragmentManager, label);
     }

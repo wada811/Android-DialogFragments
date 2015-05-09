@@ -14,46 +14,36 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.traditional;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.text.method.CharacterPickerDialog;
 import com.wada811.android.dialogfragments.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
 
-public class ItemsAlertDialogExample extends Example {
+public class EventAlertDialogExample extends Example {
 
     private Context context;
 
-    public ItemsAlertDialogExample(Context context){
-        super(ItemsAlertDialogExample.class.getSimpleName());
+    public EventAlertDialogExample(Context context){
+        super(EventAlertDialogExample.class.getSimpleName() + "(Traditional)");
         this.context = context;
     }
 
     @Override
     public void showDialog(DialogFragmentCallbackProvider provider, FragmentManager fragmentManager){
-        String[] items = {
-            AlertDialog.class.getSimpleName(),
-            CharacterPickerDialog.class.getSimpleName(),
-            ProgressDialog.class.getSimpleName(),
-            DatePickerDialog.class.getSimpleName(),
-            TimePickerDialog.class.getSimpleName(),
-        };
-        Bundle extra = new Bundle();
-        extra.putStringArray("items", items);
         new AlertDialogFragment.Builder(context).setIcon(R.drawable.ic_launcher)
             .setTitle(R.string.dialog_title)
-            .setItems(items)
-            .setExtra(extra)
-            .setNegativeButton(R.string.dialog_cancel, null)
+            .setMessage(R.string.dialog_message)
+            .setPositiveButton(R.string.dialog_yes, provider)
+            .setNegativeButton(R.string.dialog_no, provider)
+            .setNeutralButton(R.string.dialog_cancel, provider)
+            .setOnShowListener(provider)
+            .setOnCancelListener(provider)
+            .setOnDismissListener(provider)
+            .setOnKeyListener(provider)
             .show(fragmentManager, label);
     }
 

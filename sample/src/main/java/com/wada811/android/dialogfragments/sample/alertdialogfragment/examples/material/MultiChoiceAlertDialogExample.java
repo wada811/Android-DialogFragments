@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.material;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -24,7 +24,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.text.method.CharacterPickerDialog;
-import com.wada811.android.dialogfragments.AlertDialogFragment;
+import com.wada811.android.dialogfragments.material.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
@@ -34,7 +34,7 @@ public class MultiChoiceAlertDialogExample extends Example {
     private Context context;
 
     public MultiChoiceAlertDialogExample(Context context){
-        super(MultiChoiceAlertDialogExample.class.getSimpleName());
+        super(MultiChoiceAlertDialogExample.class.getSimpleName() + "(Material)");
         this.context = context;
     }
 
