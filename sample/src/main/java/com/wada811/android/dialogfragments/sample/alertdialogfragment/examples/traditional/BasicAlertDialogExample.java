@@ -18,7 +18,7 @@ package com.wada811.android.dialogfragments.sample.alertdialogfragment.examples.
 
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
-import com.wada811.android.dialogfragments.AlertDialogFragment;
+import com.wada811.android.dialogfragments.traditional.AlertDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;

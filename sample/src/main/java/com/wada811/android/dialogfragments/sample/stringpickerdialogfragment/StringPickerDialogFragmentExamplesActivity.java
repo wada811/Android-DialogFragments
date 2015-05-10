@@ -20,7 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.Toast;
-import com.wada811.android.dialogfragments.StringPicker;
+import com.wada811.android.dialogfragments.view.StringPicker;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;

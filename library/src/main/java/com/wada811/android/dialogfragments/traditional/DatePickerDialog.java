@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;

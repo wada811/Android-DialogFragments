@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.DatePicker;
-import com.wada811.android.dialogfragments.DatePickerDialogInterface.OnDateSetListener;
+import com.wada811.android.dialogfragments.traditional.DatePickerDialogInterface.OnDateSetListener;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;

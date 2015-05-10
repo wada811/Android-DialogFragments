@@ -21,7 +21,7 @@ import android.widget.DatePicker;
 import android.widget.ListAdapter;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
-import com.wada811.android.dialogfragments.StringPicker;
+import com.wada811.android.dialogfragments.view.StringPicker;
 
 public interface DialogFragmentCallback {
 

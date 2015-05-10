@@ -29,7 +29,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatDialog;
 import android.util.Log;
 import android.view.KeyEvent;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
@@ -96,7 +95,7 @@ abstract class AbstractDialogFragment extends DialogFragment implements DialogFr
 
     @NonNull
     @Override
-    public abstract AppCompatDialog onCreateDialog(Bundle savedInstanceState);
+    public abstract Dialog onCreateDialog(Bundle savedInstanceState);
 
     //============================================================
     //     _____                                     _

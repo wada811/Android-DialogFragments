@@ -22,7 +22,7 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.support.v4.app.FragmentManager;
 import android.text.method.CharacterPickerDialog;
-import com.wada811.android.dialogfragments.StringPickerDialogFragment;
+import com.wada811.android.dialogfragments.traditional.StringPickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;

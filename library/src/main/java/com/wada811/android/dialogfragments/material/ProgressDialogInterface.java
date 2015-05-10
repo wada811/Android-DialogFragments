@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.material;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -80,10 +80,10 @@ interface ProgressDialogInterface {
 
     /**
      * Change the format of the small text showing the percentage of progress. The default is {@link
-     * java.text.NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().} Should not be called during
+     * NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().} Should not be called during
      * the number is progressing.
      *
-     * @param format An instance of a {@link java.text.NumberFormat} to generate the percentage text. If null, nothing
+     * @param format An instance of a {@link NumberFormat} to generate the percentage text. If null, nothing
      * will be shown.
      */
     void setProgressPercentFormat(NumberFormat format);

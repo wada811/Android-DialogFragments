@@ -47,11 +47,19 @@
             android:label="@string/title_activity_progress_dialog_fragment_examples">
         </activity>
         <activity
-            android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity"
+            android:name=".progressdialogfragment.examples.traditional.LoaderSpinnerProgressDialogFragmentExamplesActivity"
             android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_activity">
         </activity>
         <activity
-            android:name=".progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
+            android:name=".progressdialogfragment.examples.material.LoaderSpinnerProgressDialogFragmentExamplesActivity"
+            android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_activity">
+        </activity>
+        <activity
+            android:name=".progressdialogfragment.examples.traditional.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
+            android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_fragment">
+        </activity>
+        <activity
+            android:name=".progressdialogfragment.examples.material.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity"
             android:label="@string/title_activity_progress_dialog_fragment_with_loader_in_fragment">
         </activity>
         <!-- DatePickerDialogFragment Examples -->

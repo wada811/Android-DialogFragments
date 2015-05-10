@@ -22,11 +22,9 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import java.util.ArrayList;
 import com.wada811.android.dialogfragments.sample.Examples;
 import com.wada811.android.dialogfragments.sample.R;
-import com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesActivity;
-import com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity;
+import java.util.ArrayList;
 
 public class ProgressDialogFragmentExamplesFragment extends ListFragment {
 
@@ -49,14 +47,31 @@ public class ProgressDialogFragmentExamplesFragment extends ListFragment {
     private void initExample(){
         items = new ArrayList<>();
         {
-            Intent intent = new Intent(getActivity(), LoaderSpinnerProgressDialogFragmentExamplesActivity.class);
-            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity);
+            Intent intent = new Intent(getActivity(),
+                com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.traditional.LoaderSpinnerProgressDialogFragmentExamplesActivity.class
+            );
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity) + "(Traditional)";
             items.add(new Examples(label, intent));
         }
         {
             Intent intent = new Intent(getActivity(),
-                LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class);
-            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment);
+                com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.material.LoaderSpinnerProgressDialogFragmentExamplesActivity.class
+            );
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_activity) + "(Material)";
+            items.add(new Examples(label, intent));
+        }
+        {
+            Intent intent = new Intent(getActivity(),
+                com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.traditional.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
+            );
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment) + "(Traditional)";
+            items.add(new Examples(label, intent));
+        }
+        {
+            Intent intent = new Intent(getActivity(),
+                com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.material.LoaderSpinnerProgressDialogFragmentExamplesFragmentActivity.class
+            );
+            String label = getString(R.string.title_activity_progress_dialog_fragment_with_loader_in_fragment) + "(Material)";
             items.add(new Examples(label, intent));
         }
     }

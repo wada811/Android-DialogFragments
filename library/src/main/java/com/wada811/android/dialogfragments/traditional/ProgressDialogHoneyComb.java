@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;

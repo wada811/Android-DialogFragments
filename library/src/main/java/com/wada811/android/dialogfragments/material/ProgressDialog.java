@@ -19,9 +19,8 @@
  *  (The Android Open Source Project: android-2.3.7_r1)
  */
 
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.material;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -29,6 +28,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
@@ -48,7 +48,7 @@ import java.text.NumberFormat;
  * used at the same time. </p> <p> The dialog can be made cancelable on back key press. </p> <p> The progress range is
  * 0..10000. </p>
  */
-final class ProgressDialogBase extends AlertDialog implements ProgressDialogInterface {
+final class ProgressDialog extends AlertDialog implements ProgressDialogInterface {
 
     protected ProgressBar progressBar;
     protected TextView messageView;
@@ -74,8 +74,12 @@ final class ProgressDialogBase extends AlertDialog implements ProgressDialogInte
     protected boolean hasStarted;
     protected Handler viewUpdateHandler;
 
-    public ProgressDialogBase(Context context){
+    public ProgressDialog(Context context){
         super(context);
+    }
+
+    public ProgressDialog(Context context, int theme) {
+        super(context, theme);
     }
 
     @Override
@@ -283,10 +287,10 @@ final class ProgressDialogBase extends AlertDialog implements ProgressDialogInte
 
     /**
      * Change the format of the small text showing the percentage of progress. The default is {@link
-     * java.text.NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().} Should not be called during
+     * NumberFormat#getPercentInstance() NumberFormat.getPercentageInstnace().} Should not be called during
      * the number is progressing.
      *
-     * @param format An instance of a {@link java.text.NumberFormat} to generate the percentage text. If null, nothing
+     * @param format An instance of a {@link NumberFormat} to generate the percentage text. If null, nothing
      * will be shown.
      */
     public void setProgressPercentFormat(NumberFormat format){
@@ -304,9 +308,9 @@ final class ProgressDialogBase extends AlertDialog implements ProgressDialogInte
 
     private static class ViewUpdateHandler extends Handler {
 
-        private WeakReference<ProgressDialogBase> weakReference;
+        private WeakReference<ProgressDialog> weakReference;
 
-        public ViewUpdateHandler(ProgressDialogBase progressDialog){
+        public ViewUpdateHandler(ProgressDialog progressDialog){
             weakReference = new WeakReference<>(progressDialog);
         }
 
@@ -314,7 +318,7 @@ final class ProgressDialogBase extends AlertDialog implements ProgressDialogInte
         public void handleMessage(Message msg){
             super.handleMessage(msg);
 
-            ProgressDialogBase progressDialog = weakReference.get();
+            ProgressDialog progressDialog = weakReference.get();
             if(progressDialog == null){
                 return;
             }

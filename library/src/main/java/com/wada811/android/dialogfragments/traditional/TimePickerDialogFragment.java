@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.TimePicker;
-import com.wada811.android.dialogfragments.TimePickerDialogInterface.OnTimeSetListener;
+import com.wada811.android.dialogfragments.traditional.TimePickerDialogInterface.OnTimeSetListener;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;

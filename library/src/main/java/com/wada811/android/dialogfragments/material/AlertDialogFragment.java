@@ -17,6 +17,7 @@ package com.wada811.android.dialogfragments.material;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -82,11 +83,10 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Constructor using a context and theme for this builder and
-         * the {@link AlertDialog} it creates.  The actual theme
-         * that an AlertDialog uses is a private implementation, however you can
-         * here supply either the name of an attribute in the theme from which
-         * to get the dialog's style (such as {@link android.R.attr#alertDialogTheme}.
+         * Constructor using a context and theme for this builder and the {@link AlertDialog} it creates.  The actual
+         * theme that an AlertDialog uses is a private implementation, however you can here supply either the name of an
+         * attribute in the theme from which to get the dialog's style (such as {@link
+         * android.R.attr#alertDialogTheme}.
          */
         public Builder(Context context, int theme){
             this.context = context.getApplicationContext();
@@ -275,8 +275,8 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
         }
 
         /**
-         * Set a list of items, which are supplied by the given {@link ListAdapter}, to be displayed in
-         * the dialog as the content, you will be notified of the selected item via the supplied listener.
+         * Set a list of items, which are supplied by the given {@link ListAdapter}, to be displayed in the dialog as
+         * the content, you will be notified of the selected item via the supplied listener.
          *
          * @param povider The {@link DialogFragmentCallback#getAdapter(DialogFragmentInterface)} to supply the list of
          * items
@@ -511,7 +511,7 @@ public class AlertDialogFragment extends AbstractDialogFragment implements Dialo
 
     @NonNull
     @Override
-    public AppCompatDialog onCreateDialog(Bundle savedInstanceState){
+    public Dialog onCreateDialog(Bundle savedInstanceState){
         if(!isFromBuilder){
             throw new RuntimeException("Use MaterialAlertDialogFragment$Builder");
         }

@@ -17,7 +17,7 @@
 package com.wada811.android.dialogfragments.sample.numberpickerdialogfragment.examples;
 
 import android.support.v4.app.FragmentManager;
-import com.wada811.android.dialogfragments.NumberPickerDialogFragment;
+import com.wada811.android.dialogfragments.traditional.NumberPickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;

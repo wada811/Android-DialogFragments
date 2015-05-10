@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -22,6 +22,7 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import com.wada811.android.dialogfragments.view.StringPicker;
 import java.util.List;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)

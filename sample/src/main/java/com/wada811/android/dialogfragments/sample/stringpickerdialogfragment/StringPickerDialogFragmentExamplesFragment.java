@@ -24,7 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
-import com.wada811.android.dialogfragments.StringPicker;
+import com.wada811.android.dialogfragments.view.StringPicker;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;

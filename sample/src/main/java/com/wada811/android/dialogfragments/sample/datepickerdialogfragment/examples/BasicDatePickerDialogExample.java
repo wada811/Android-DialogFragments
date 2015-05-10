@@ -19,7 +19,7 @@ package com.wada811.android.dialogfragments.sample.datepickerdialogfragment.exam
 import android.support.v4.app.FragmentManager;
 import java.util.Calendar;
 import java.util.Date;
-import com.wada811.android.dialogfragments.DatePickerDialogFragment;
+import com.wada811.android.dialogfragments.traditional.DatePickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;

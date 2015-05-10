@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wada811.android.dialogfragments.sample.progressdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.material;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,13 +26,14 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import java.util.ArrayList;
-import com.wada811.android.dialogfragments.ProgressDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import com.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import com.wada811.android.dialogfragments.sample.R;
+import com.wada811.android.dialogfragments.sample.progressdialogfragment.examples.AsyncSleepLoader;
+import com.wada811.android.dialogfragments.material.ProgressDialogFragment;
+import java.util.ArrayList;
 
 public class LoaderSpinnerProgressDialogFragmentExamplesActivity extends ActionBarActivity
     implements OnItemClickListener, DialogFragmentCallbackProvider, LoaderCallbacks<Object> {

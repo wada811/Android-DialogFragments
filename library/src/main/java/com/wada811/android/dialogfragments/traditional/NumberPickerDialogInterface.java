@@ -13,33 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.wada811.android.dialogfragments;
+package com.wada811.android.dialogfragments.traditional;
 
-import java.util.List;
+import android.widget.NumberPicker;
 
-@SuppressWarnings("unused")
-interface StringPickerDialogInterface {
+public interface NumberPickerDialogInterface {
 
-    StringPicker getStringPicker();
+    String VALUE = "value";
+    String MIN_VALUE = "minValue";
+    String MAX_VALUE = "maxValue";
 
-    void setDisplayedValue(String value);
+    NumberPicker getNumberPicker();
 
-    String getDisplayedValue();
-
-    void setDisplayedValues(List<String> values);
-
-    void setDisplayedValues(String[] values);
+    void updateNumber(int value);
 
     /**
-     * The callback interface used to indicate the user is done filling in
-     * the time (they clicked on the 'Set' button).
+     * The callback interface used to indicate the user is done filling in the time (they clicked on the 'Set' button).
      */
-    interface OnStringSetListener {
+    interface OnNumberSetListener {
 
         /**
-         * @param stringPicker The view associated with this listener.
+         * @param numberPicker The view associated with this listener.
          * @param value The value that was set.
          */
-        void onStringSet(StringPicker stringPicker, String value);
+        void onNumberSet(NumberPicker numberPicker, int value);
     }
+
 }
