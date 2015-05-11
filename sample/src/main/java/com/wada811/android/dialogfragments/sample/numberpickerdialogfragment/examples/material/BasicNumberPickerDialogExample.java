@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.numberpickerdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.numberpickerdialogfragment.examples.material;
 
 import android.support.v4.app.FragmentManager;
-import com.wada811.android.dialogfragments.traditional.NumberPickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
+import com.wada811.android.dialogfragments.material.NumberPickerDialogFragment;
 
 public class BasicNumberPickerDialogExample extends Example {
 
     public BasicNumberPickerDialogExample(){
-        super(BasicNumberPickerDialogExample.class.getSimpleName());
+        super(BasicNumberPickerDialogExample.class.getSimpleName() + "(Material)");
     }
 
     @Override
