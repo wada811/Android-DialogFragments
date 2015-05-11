@@ -24,14 +24,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import java.util.ArrayList;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import com.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import com.wada811.android.dialogfragments.sample.Const;
 import com.wada811.android.dialogfragments.sample.Example;
-import com.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples.BasicTimePickerDialogExample;
+import java.util.ArrayList;
 
 public class TimePickerDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
@@ -54,7 +53,8 @@ public class TimePickerDialogFragmentExamplesFragment extends ListFragment imple
 
     private void initExample(){
         items = new ArrayList<>();
-        items.add(new BasicTimePickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples.traditional.BasicTimePickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples.material.BasicTimePickerDialogExample());
     }
 
     private void initListFragment(){

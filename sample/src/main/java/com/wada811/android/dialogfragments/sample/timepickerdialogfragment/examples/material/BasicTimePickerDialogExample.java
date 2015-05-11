@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.timepickerdialogfragment.examples.material;
 
 import android.support.v4.app.FragmentManager;
-import java.util.Calendar;
-import java.util.Date;
-import com.wada811.android.dialogfragments.traditional.TimePickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
+import com.wada811.android.dialogfragments.material.TimePickerDialogFragment;
+import java.util.Calendar;
+import java.util.Date;
 
 public class BasicTimePickerDialogExample extends Example {
 
     public BasicTimePickerDialogExample(){
-        super(BasicTimePickerDialogExample.class.getSimpleName());
+        super(BasicTimePickerDialogExample.class.getSimpleName() + "(Material)");
     }
 
     @Override
