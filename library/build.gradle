@@ -39,7 +39,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://${repo.absolutePath}"
-            pom.version = '2.0.0'
+            pom.version = '3.0.0'
             pom.groupId = 'com.wada811'
             pom.artifactId = 'android-dialog-fragments'
         }

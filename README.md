@@ -4,7 +4,7 @@ Android-DialogFragments
 
 Various DialogFragments for Android.
 
-## DialogFragments
+## DialogFragments(traditional and material style)
 
 - AlertDialogFragment
 - ProgressDialogFragment
@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.wada811:android-dialog-fragments:2.0.0'
+    compile 'com.wada811:android-dialog-fragments:3.0.0'
 }
 ```
 
