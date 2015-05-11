@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples.traditional;
 
 import android.support.v4.app.FragmentManager;
-import java.util.Calendar;
-import java.util.Date;
-import com.wada811.android.dialogfragments.traditional.DatePickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
+import com.wada811.android.dialogfragments.traditional.DatePickerDialogFragment;
+import java.util.Calendar;
+import java.util.Date;
 
 public class BasicDatePickerDialogExample extends Example {
 
     public BasicDatePickerDialogExample(){
-        super(BasicDatePickerDialogExample.class.getSimpleName());
+        super(BasicDatePickerDialogExample.class.getSimpleName() + "(Traditional)");
     }
 
     @Override

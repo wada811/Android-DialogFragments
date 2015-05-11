@@ -24,14 +24,13 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Toast;
-import java.util.ArrayList;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import com.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import com.wada811.android.dialogfragments.sample.Const;
 import com.wada811.android.dialogfragments.sample.Example;
-import com.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples.BasicDatePickerDialogExample;
+import java.util.ArrayList;
 
 public class DatePickerDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
@@ -54,7 +53,8 @@ public class DatePickerDialogFragmentExamplesFragment extends ListFragment imple
 
     private void initExample(){
         items = new ArrayList<>();
-        items.add(new BasicDatePickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples.traditional.BasicDatePickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.datepickerdialogfragment.examples.material.BasicDatePickerDialogExample());
     }
 
     private void initListFragment(){
