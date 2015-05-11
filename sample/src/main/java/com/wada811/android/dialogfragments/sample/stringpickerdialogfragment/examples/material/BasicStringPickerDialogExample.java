@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples;
+package com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.material;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -22,15 +22,15 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.support.v4.app.FragmentManager;
 import android.text.method.CharacterPickerDialog;
-import com.wada811.android.dialogfragments.traditional.StringPickerDialogFragment;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
+import com.wada811.android.dialogfragments.material.StringPickerDialogFragment;
 import com.wada811.android.dialogfragments.sample.Example;
 import com.wada811.android.dialogfragments.sample.R;
 
 public class BasicStringPickerDialogExample extends Example {
 
     public BasicStringPickerDialogExample(){
-        super(BasicStringPickerDialogExample.class.getSimpleName());
+        super(BasicStringPickerDialogExample.class.getSimpleName() + "(Material)");
     }
 
     @Override

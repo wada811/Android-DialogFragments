@@ -23,15 +23,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import java.util.ArrayList;
-import com.wada811.android.dialogfragments.view.StringPicker;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallback;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentCallbackProvider;
 import com.wada811.android.dialogfragments.interfaces.DialogFragmentInterface;
 import com.wada811.android.dialogfragments.interfaces.SimpleDialogFragmentCallback;
 import com.wada811.android.dialogfragments.sample.Const;
 import com.wada811.android.dialogfragments.sample.Example;
-import com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.BasicStringPickerDialogExample;
+import com.wada811.android.dialogfragments.view.StringPicker;
+import java.util.ArrayList;
 
 public class StringPickerDialogFragmentExamplesFragment extends ListFragment implements DialogFragmentCallbackProvider {
 
@@ -54,7 +53,8 @@ public class StringPickerDialogFragmentExamplesFragment extends ListFragment imp
 
     private void initExample(){
         items = new ArrayList<>();
-        items.add(new BasicStringPickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.traditional.BasicStringPickerDialogExample());
+        items.add(new com.wada811.android.dialogfragments.sample.stringpickerdialogfragment.examples.material.BasicStringPickerDialogExample());
     }
 
     private void initListFragment(){
